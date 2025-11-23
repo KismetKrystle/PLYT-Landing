@@ -37,7 +37,7 @@ export default function Footer() {
                     <div className="flex flex-col space-y-4 md:items-end">
                         <h4 className="text-cream font-sans font-bold mb-2">Connect</h4>
                         <a href="mailto:hello@plyant.com" className="font-mono text-digital-teal hover:text-digital-teal/80 transition-colors">
-                            hello@plyant.com
+                            krystle@plyant.com
                         </a>
                         <div className="flex gap-4">
                             {["Twitter", "LinkedIn", "Instagram"].map((social) => (
