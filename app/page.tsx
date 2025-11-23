@@ -1,7 +1,7 @@
 import ConsumerNavbar from "./components/consumer/Navbar";
 import HeroModern from "./components/consumer/HeroModern";
 import HowItWorksModern from "./components/consumer/HowItWorksModern";
-import ConsumerProblem from "./components/consumer/Problem";
+import ProblemSolutionToggle from "./components/consumer/ProblemSolutionToggle";
 import AIChat from "./components/consumer/AIChat";
 import UnifiedFlows from "./components/consumer/UnifiedFlows";
 import CommunityImpact from "./components/consumer/CommunityImpact";
@@ -28,7 +28,7 @@ export default function Home() {
 
         <HeroModern />
 
-        <ConsumerProblem />
+        <ProblemSolutionToggle />
 
         <HowItWorksModern />
 
