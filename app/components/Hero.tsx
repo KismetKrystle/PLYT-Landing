@@ -26,7 +26,7 @@ export default function Hero() {
                 }}
             >
                 {/* Overlay Gradient */}
-                <div className="absolute inset-0 bg-gradient-to-b from-forest-green/30 via-forest-green/20 to-forest-green/90"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-brand-dark/30 via-brand-dark/20 to-brand-dark/90"></div>
             </div>
 
             {/* Floating Particles (CSS Animation) */}
@@ -34,7 +34,7 @@ export default function Hero() {
                 {[...Array(10)].map((_, i) => (
                     <div
                         key={i}
-                        className="absolute rounded-full bg-digital-teal/30 blur-sm animate-float"
+                        className="absolute rounded-full bg-brand-earth/30 blur-sm animate-float"
                         style={{
                             width: Math.random() * 10 + 5 + "px",
                             height: Math.random() * 10 + 5 + "px",
@@ -49,20 +49,20 @@ export default function Hero() {
 
             {/* Content */}
             <div className="relative z-20 container mx-auto px-6 text-center">
-                <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-cream mb-6 leading-tight animate-fade-in-up">
+                <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl text-brand-light mb-6 leading-tight animate-fade-in-up">
                     Growing Communities, <br /> Not Just Food
                 </h1>
 
-                <p className="font-sans text-lg md:text-xl text-cream/90 max-w-2xl mx-auto mb-10 leading-relaxed">
+                <p className="font-sans text-lg md:text-xl text-brand-light/90 max-w-2xl mx-auto mb-10 leading-relaxed">
                     Pioneer the future of climate-resilient food systems through impact finance, blockchain technology, and community empowerment.
                 </p>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                    <Link href="#join" className="bg-bamboo-gold text-forest-green px-8 py-4 rounded-full font-sans font-semibold text-lg hover:shadow-[0_0_20px_rgba(232,197,71,0.6)] transition-all duration-300 transform hover:-translate-y-1 animate-pulse-glow">
+                    <Link href="#join" className="bg-brand-earth text-brand-dark px-8 py-4 rounded-full font-sans font-semibold text-lg hover:shadow-[0_0_20px_rgba(196,164,132,0.6)] transition-all duration-300 transform hover:-translate-y-1 animate-pulse-glow">
                         Join Waitlist
                     </Link>
-                    <Link href="#partners" className="group relative px-8 py-4 border-2 border-cream text-cream rounded-full font-sans font-bold overflow-hidden transition-all duration-500 hover:border-bamboo-gold hover:text-forest-green">
-                        <span className="absolute inset-0 bg-bamboo-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
+                    <Link href="#partners" className="group relative px-8 py-4 border-2 border-brand-light text-brand-light rounded-full font-sans font-bold overflow-hidden transition-all duration-500 hover:border-brand-earth hover:text-brand-dark">
+                        <span className="absolute inset-0 bg-brand-earth transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></span>
                         <span className="relative z-10">Explore Partnerships</span>
                     </Link>
                 </div>
@@ -71,7 +71,7 @@ export default function Hero() {
             {/* Scroll Indicator */}
             <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
                 <svg
-                    className="w-8 h-8 text-digital-teal"
+                    className="w-8 h-8 text-brand-earth"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

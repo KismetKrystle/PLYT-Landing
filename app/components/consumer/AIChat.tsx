@@ -13,7 +13,7 @@ export default function AIChat() {
             content: (
                 <div className="bg-gradient-to-br from-soft-teal/20 to-sky-blue/20 rounded-none p-6 h-full border border-dark-gray/10 flex items-center justify-center">
                     {/* Mobile View Mockup */}
-                    <div className="max-w-sm w-full bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20">
+                    <div className="max-w-sm w-full h-[450px] bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20 flex flex-col">
                         {/* Phone Header */}
                         <div className="bg-sage-green px-6 py-4">
                             <div className="flex items-center justify-between">
@@ -25,7 +25,7 @@ export default function AIChat() {
                         </div>
 
                         {/* Produce List */}
-                        <div className="p-4 space-y-3 bg-warm-white max-h-96 overflow-y-auto">
+                        <div className="p-4 space-y-3 bg-warm-white h-full flex flex-col justify-center">
                             {[
                                 { name: "Organic Tomatoes", distance: "0.8 km", price: "$2.50", vendor: "PadangFarm" },
                                 { name: "Fresh Spinach", distance: "1.2 km", price: "$1.80", vendor: "Ubud Gardens" },
@@ -61,7 +61,7 @@ export default function AIChat() {
             content: (
                 <div className="bg-gradient-to-br from-warm-gold/20 to-coral/20 rounded-none p-6 h-full flex items-center justify-center border border-dark-gray/10">
                     {/* Mobile View Mockup */}
-                    <div className="max-w-sm w-full bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20">
+                    <div className="max-w-sm w-full h-[450px] bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20 flex flex-col">
                         {/* Phone Header */}
                         <div className="bg-warm-gold px-6 py-4">
                             <div className="flex items-center justify-between">
@@ -71,7 +71,7 @@ export default function AIChat() {
                                 </svg>
                             </div>
                         </div>
-                        <div className="bg-warm-white h-96 overflow-y-auto p-4 flex items-center justify-center">
+                        <div className="bg-warm-white h-full p-4 flex items-center justify-center">
                             <h4 className="text-center font-bold text-dark-gray mb-6">Growing Basil at Home</h4>
 
                             {/* Simple Plant Visualization */}
@@ -146,7 +146,7 @@ export default function AIChat() {
             content: (
                 <div className="bg-gradient-to-br from-sage-green/20 to-soft-teal/20 rounded-none p-6 h-full flex items-center justify-center border border-dark-gray/10">
                     {/* Mobile View Mockup */}
-                    <div className="max-w-sm w-full bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20">
+                    <div className="max-w-sm w-full h-[450px] bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20 flex flex-col">
                         {/* Phone Header */}
                         <div className="bg-sage-green px-6 py-4">
                             <div className="flex items-center justify-between">
@@ -156,7 +156,7 @@ export default function AIChat() {
                                 </svg>
                             </div>
                         </div>
-                        <div className="bg-warm-white h-96 overflow-y-auto p-4">
+                        <div className="bg-warm-white h-full p-4 flex flex-col justify-center">
                             <div className="bg-white rounded-xl p-4 shadow-sm border border-sage-green/20">
                                 {/* System Image Placeholder */}
                                 <div className="aspect-square bg-gradient-to-br from-sage-green/30 to-soft-teal/30 rounded-2xl mb-4 flex items-center justify-center relative">
@@ -221,7 +221,7 @@ export default function AIChat() {
             content: (
                 <div className="bg-gradient-to-br from-sky-blue/20 to-soft-teal/20 rounded-none p-6 h-full flex items-center justify-center border border-dark-gray/10">
                     {/* Mobile View Mockup */}
-                    <div className="max-w-sm w-full bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20">
+                    <div className="max-w-sm w-full h-[450px] bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20 flex flex-col">
                         {/* Phone Header */}
                         <div className="bg-sky-blue px-6 py-4">
                             <div className="flex items-center justify-between">
@@ -231,7 +231,7 @@ export default function AIChat() {
                                 </svg>
                             </div>
                         </div>
-                        <div className="bg-dark-gray/90 h-96 overflow-y-auto p-4 relative">
+                        <div className="bg-dark-gray/90 h-full p-4 relative flex flex-col justify-center">
                             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-soft-teal to-transparent opacity-50"></div>
 
                             <div className="flex justify-between items-center mb-6">
@@ -301,7 +301,7 @@ export default function AIChat() {
                         <div className="grid md:grid-cols-2 gap-8 items-center min-h-[400px]">
                             {/* Left: Visual Content */}
                             <div className="relative">
-                                <div className="h-[400px] flex items-center justify-center">
+                                <div className="h-[500px] flex items-center justify-center">
                                     {cards[activeCard].content}
                                 </div>
                             </div>

@@ -10,11 +10,13 @@ import CommunityImpact from "./components/consumer/CommunityImpact";
 import BaliPilot from "./components/consumer/BaliPilot";
 import Partnerships from "./components/consumer/Partnerships";
 import ContactModern from "./components/consumer/ContactModern";
+import TechnicalDeepDive from "./components/consumer/TechnicalDeepDive";
 
 export default function Home() {
   return (
     <main>
-      <ConsumerNavbar />
+      <ConsumerNavbar className="top-0" />
+
       <HeroModern />
       <PartnersBanner />
       <HowItWorksModern />
@@ -23,6 +25,7 @@ export default function Home() {
       <AIChat />
       <UnifiedFlows />
       <CommunityImpact />
+      <TechnicalDeepDive />
       <BaliPilot />
       <Partnerships />
       <ContactModern />

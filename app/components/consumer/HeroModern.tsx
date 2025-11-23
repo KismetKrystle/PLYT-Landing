@@ -64,14 +64,13 @@ export default function HeroModern() {
                                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
                             </motion.button>
 
-                            <motion.button
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
+                            <a
+                                href="#technology"
                                 className="w-full bg-transparent text-brand-dark py-4 px-6 text-lg font-bold uppercase tracking-wider flex items-center justify-between border border-brand-dark hover:bg-brand-dark hover:text-brand-light transition-colors"
                             >
-                                Learn More
+                                Learn More | XRPL Integration
                                 <span className="text-xl">+</span>
-                            </motion.button>
+                            </a>
                         </div>
                     </motion.div>
 

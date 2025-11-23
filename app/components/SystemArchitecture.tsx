@@ -54,19 +54,19 @@ export default function SystemArchitecture() {
     ];
 
     return (
-        <section className="bg-charcoal py-24 relative overflow-hidden">
+        <section className="bg-brand-light py-24 relative overflow-hidden">
             {/* Background Glow */}
-            <div className="absolute top-0 left-1/2 w-96 h-96 bg-digital-teal/10 rounded-full blur-3xl -translate-x-1/2"></div>
+            <div className="absolute top-0 left-1/2 w-96 h-96 bg-brand-earth/5 rounded-full blur-3xl -translate-x-1/2"></div>
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-16">
-                    <span className="font-mono text-bamboo-gold text-sm tracking-wider border border-bamboo-gold/30 px-3 py-1 rounded bg-bamboo-gold/10 inline-block mb-4">
+                    <span className="font-mono text-brand-earth text-sm tracking-wider border border-brand-earth/30 px-3 py-1 rounded-none bg-brand-earth/10 inline-block mb-4">
                         SYSTEM ARCHITECTURE
                     </span>
-                    <h2 className="font-serif text-4xl md:text-6xl text-cream mb-6">
+                    <h2 className="font-display text-4xl md:text-6xl text-brand-dark mb-6 uppercase tracking-tight">
                         Plyant User Flow & System Architecture
                     </h2>
-                    <p className="text-cream/70 text-lg max-w-3xl mx-auto">
+                    <p className="text-brand-dark/70 text-lg max-w-3xl mx-auto font-serif">
                         End-to-end blockchain-powered ecosystem connecting growers, consumers, and impact investors
                     </p>
                 </div>
@@ -78,30 +78,29 @@ export default function SystemArchitecture() {
                             <div key={step.number} className="relative">
                                 {/* Connection Line */}
                                 {index < steps.length - 1 && (
-                                    <div className="absolute left-12 top-full w-0.5 h-4 bg-digital-teal/30 z-0"></div>
+                                    <div className="absolute left-12 top-full w-0.5 h-4 bg-brand-dark/10 z-0"></div>
                                 )}
 
                                 {/* Step Card */}
-                                <div className="relative glass-panel-dark rounded-xl p-6 border border-digital-teal/20 hover:border-digital-teal/40 transition-all group">
+                                <div className="relative bg-white rounded-none p-6 border border-brand-dark/10 hover:border-brand-earth transition-all group shadow-sm hover:shadow-md">
                                     <div className="flex items-start gap-6">
                                         {/* Number Badge */}
-                                        <div className={`w-12 h-12 bg-${step.color} rounded-full flex items-center justify-center shrink-0 relative z-10`}>
-                                            <span className="text-charcoal font-bold text-xl">{step.number}</span>
-                                            <div className={`absolute inset-0 bg-${step.color} rounded-full opacity-20 animate-pulse`}></div>
+                                        <div className={`w-12 h-12 ${step.color === 'digital-teal' ? 'bg-brand-dark text-brand-light' : 'bg-brand-earth text-brand-light'} flex items-center justify-center shrink-0 relative z-10`}>
+                                            <span className="font-bold text-xl font-display">{step.number}</span>
                                         </div>
 
                                         {/* Content */}
                                         <div className="flex-1">
-                                            <h3 className="font-sans font-bold text-2xl text-cream mb-2 group-hover:text-digital-teal transition-colors">
+                                            <h3 className="font-display font-bold text-2xl text-brand-dark mb-2 uppercase tracking-wide group-hover:text-brand-earth transition-colors">
                                                 {step.title}
                                             </h3>
-                                            <p className="text-cream/80 mb-2">{step.description}</p>
-                                            <p className="text-cream/60 text-sm font-mono">{step.details}</p>
+                                            <p className="text-brand-dark/80 mb-2 font-serif">{step.description}</p>
+                                            <p className="text-brand-dark/50 text-sm font-mono">{step.details}</p>
                                         </div>
 
                                         {/* Arrow Icon */}
                                         <div className="hidden md:block">
-                                            <svg className={`w-6 h-6 text-${step.color}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg className={`w-6 h-6 text-brand-earth/50 group-hover:text-brand-earth transition-colors`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                                             </svg>
                                         </div>
@@ -112,35 +111,35 @@ export default function SystemArchitecture() {
                     </div>
 
                     {/* Summary Box */}
-                    <div className="mt-12 glass-panel rounded-2xl p-8 border border-bamboo-gold/30">
-                        <h4 className="font-sans font-bold text-xl text-bamboo-gold mb-4">Key System Features</h4>
+                    <div className="mt-12 bg-brand-dark text-brand-light rounded-none p-8 border border-brand-earth/30">
+                        <h4 className="font-display font-bold text-xl text-brand-earth mb-6 uppercase tracking-wider">Key System Features</h4>
                         <div className="grid md:grid-cols-3 gap-6">
                             <div>
                                 <div className="flex items-center gap-2 mb-2">
-                                    <svg className="w-5 h-5 text-digital-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg className="w-5 h-5 text-brand-earth" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                                     </svg>
-                                    <span className="font-sans font-bold text-cream">Instant Transactions</span>
+                                    <span className="font-sans font-bold text-brand-light">Instant Transactions</span>
                                 </div>
-                                <p className="text-cream/60 text-sm">XRPL processes payments in 3-5 seconds</p>
+                                <p className="text-brand-light/60 text-sm">XRPL processes payments in 3-5 seconds</p>
                             </div>
                             <div>
                                 <div className="flex items-center gap-2 mb-2">
-                                    <svg className="w-5 h-5 text-digital-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg className="w-5 h-5 text-brand-earth" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                                     </svg>
-                                    <span className="font-sans font-bold text-cream">Automated Smart Contracts</span>
+                                    <span className="font-sans font-bold text-brand-light">Automated Smart Contracts</span>
                                 </div>
-                                <p className="text-cream/60 text-sm">Royalties, payments, and rewards flow automatically</p>
+                                <p className="text-brand-light/60 text-sm">Royalties, payments, and rewards flow automatically</p>
                             </div>
                             <div>
                                 <div className="flex items-center gap-2 mb-2">
-                                    <svg className="w-5 h-5 text-digital-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <svg className="w-5 h-5 text-brand-earth" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                                     </svg>
-                                    <span className="font-sans font-bold text-cream">Transparent Impact Data</span>
+                                    <span className="font-sans font-bold text-brand-light">Transparent Impact Data</span>
                                 </div>
-                                <p className="text-cream/60 text-sm">All metrics recorded immutably on-chain</p>
+                                <p className="text-brand-light/60 text-sm">All metrics recorded immutably on-chain</p>
                             </div>
                         </div>
                     </div>
