@@ -71,8 +71,8 @@ export default function ConsumerProblem() {
                             Small farmers capture less value while consumers pay more for lower quality, nutrient-poor food.
                         </p>
                         <div className="bg-warm-gold/10 rounded-lg p-4 text-center mt-auto w-full">
-                            <p className="text-3xl font-mono font-bold text-warm-gold mb-1">2.5kg</p>
-                            <p className="text-sm text-dark-gray/70">CO₂ per purchase</p>
+                            <p className="text-3xl font-mono font-bold text-warm-gold mb-1">15%</p>
+                            <p className="text-sm text-dark-gray/70">Farmer's share of retail price</p>
                         </div>
                     </div>
                 </div>

@@ -113,8 +113,8 @@ export default function Problem() {
                             Small farmers capture less value while consumers pay more for lower quality, nutrient-poor food.
                         </p>
                         <div className="mt-auto">
-                            <Counter end={2.5} suffix="kg" />
-                            <p className="text-xs text-brand-light/50 mt-1 font-mono">CO2 PER PURCHASE</p>
+                            <Counter end={15} suffix="%" />
+                            <p className="text-xs text-brand-light/50 mt-1 font-mono">FARMER'S SHARE OF RETAIL PRICE</p>
                         </div>
                     </div>
                 </div>
