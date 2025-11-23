@@ -30,7 +30,7 @@ export default function ConsumerFooter() {
                     <div>
                         <h4 className="font-sans font-bold text-warm-white mb-4">Connect</h4>
                         <ul className="space-y-2">
-                            <li><a href="mailto:hello@plyant.com" className="text-warm-white/70 hover:text-sage-green transition-colors">hello@plyant.com</a></li>
+                            <li><a href="mailto:krystle@plyant.com" className="text-warm-white/70 hover:text-sage-green transition-colors">krystle@plyant.com</a></li>
                             <li><a href="#" className="text-warm-white/70 hover:text-sage-green transition-colors">Instagram</a></li>
                             <li><a href="#" className="text-warm-white/70 hover:text-sage-green transition-colors">LinkedIn</a></li>
                         </ul>

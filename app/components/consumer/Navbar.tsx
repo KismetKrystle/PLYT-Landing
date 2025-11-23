@@ -37,7 +37,7 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
                         <a href="#ai-chat" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
                             Features
                         </a>
-                        <a href="#unified-flows" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <a href="#how-it-works" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
                             How It Works
                         </a>
                         <button
@@ -73,7 +73,7 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
                         <a href="#ai-chat" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
                             Features
                         </a>
-                        <a href="#unified-flows" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <a href="#how-it-works" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
                             How It Works
                         </a>
                         <button

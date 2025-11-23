@@ -46,7 +46,7 @@ export default function ContactModern() {
                                 </div>
                                 <div>
                                     <p className="text-sm text-brand-light/50 uppercase tracking-wider font-bold">Email Us</p>
-                                    <p className="text-lg">hello@plyant.io</p>
+                                    <p className="text-lg">krystle@plyant.com</p>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">

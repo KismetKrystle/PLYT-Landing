@@ -138,7 +138,7 @@ function StepCard({ step }: { step: typeof steps[0] }) {
 
 export default function HowItWorksModern() {
     return (
-        <section className="w-full bg-brand-light text-brand-black pt-12 pb-24 px-4 md:px-8 relative">
+        <section id="how-it-works" className="w-full bg-brand-light text-brand-black pt-12 pb-24 px-4 md:px-8 relative">
             <div className="w-full max-w-[1800px] mx-auto">
                 {/* Header Section */}
                 <div className="mb-20 grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
