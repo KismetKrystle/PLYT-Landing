@@ -1,36 +1,177 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Plyant - Urban Nature Network
 
-## Getting Started
+A modern, interactive landing page for Plyant's XRPL Residency submission, showcasing climate-resilient, financially inclusive food systems powered by blockchain technology.
 
-First, run the development server:
+## 🌱 About Plyant
 
+Plyant is building **The Network of Urban Nature** - transforming concrete jungles into living, breathing ecosystems through hyper-local food systems, AI-powered tools, and blockchain-enabled financial inclusion.
+
+## ✨ Features
+
+### Consumer Landing Page
+- **Hero Section**: Dynamic introduction with urban nature imagery
+- **Problem Statement**: Interactive display of climate and food security challenges
+- **How It Works**: Modern flow visualization of the Plyant ecosystem
+- **AI Assistant**: Carousel showcasing AI-powered shopping and growing tools
+- **Unified Flows**: Tabbed interface for Money Works, AI Shopping, and AI Growing
+- **Community Impact**: Climate resilience metrics and local food system benefits
+- **Contact**: Modern contact form with social links
+
+### Technical Deep Dive (For XRPL Judges)
+- **Blockchain Technology**: Key XRPL features and integration details
+- **System Architecture**: Step-by-step user flow with smart contract implementation
+- **Technical Specifications**: Detailed breakdown of the platform's technical stack
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Deployment**: Vercel
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+ 
+- npm, yarn, pnpm, or bun
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com/KismetKode/PLYANT-Landing.git
+cd Plyant-UN-Landing2025
+```
+
+2. Install dependencies:
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+3. Run the development server:
 ```bash
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build for Production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+Plyant-UN-Landing2025/
+├── app/
+│   ├── components/
+│   │   ├── consumer/          # Consumer-facing components
+│   │   │   ├── HeroModern.tsx
+│   │   │   ├── Problem.tsx
+│   │   │   ├── HowItWorksModern.tsx
+│   │   │   ├── AIChat.tsx
+│   │   │   ├── UnifiedFlows.tsx
+│   │   │   ├── CommunityImpact.tsx
+│   │   │   └── ...
+│   │   ├── BlockchainTech.tsx # Technical components
+│   │   ├── SystemArchitecture.tsx
+│   │   └── ...
+│   ├── context/               # React context providers
+│   ├── page.tsx              # Main landing page
+│   ├── technology/           # Technical deep dive page
+│   └── layout.tsx
+├── public/                   # Static assets
+└── tailwind.config.ts       # Tailwind configuration
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎨 Design System
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Color Palette
+- **Brand Dark**: Primary dark color
+- **Brand Light**: Primary light color
+- **Brand Earth**: Accent color (#C4A484)
+- **Sage Green**: Success/growth color
+- **Sky Blue**: Information color
+- **Coral**: Warning/alert color
+- **Warm Gold**: Highlight color
 
-## Deploy on Vercel
+### Typography
+- **Display Font**: Used for headings and titles
+- **Serif Font**: Used for body text and descriptions
+- **Mono Font**: Used for statistics and data
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🌐 Key Sections
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Consumer Page (`/`)
+The main landing page designed for general users, featuring:
+- Climate crisis overview and solutions
+- AI-powered tools demonstration
+- Community impact metrics
+- User flows for different personas
+
+### Technology Page (`/technology`)
+Technical documentation for XRPL Residency judges, including:
+- XRPL integration details
+- Smart contract architecture
+- System flow diagrams
+- Technical specifications
+
+## 🔗 XRPL Integration
+
+Plyant leverages the XRP Ledger for:
+- **Instant Settlement**: 3-5 second transaction times
+- **Micropayments**: Ultra-low fees ($0.0001)
+- **Secure Escrow**: Smart contract-based fund release
+- **Stablecoins**: USDC payments for price stability
+- **Automated Contracts**: Farming inputs and harvest sales
+
+## 📱 Responsive Design
+
+The application is fully responsive and optimized for:
+- Desktop (1920px+)
+- Laptop (1024px - 1919px)
+- Tablet (768px - 1023px)
+- Mobile (320px - 767px)
+
+## 🚢 Deployment
+
+This project is deployed on Vercel. Any push to the `master` branch automatically triggers a new deployment.
+
+### Deploy Your Own
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/KismetKode/PLYANT-Landing)
+
+## 🤝 Contributing
+
+This is a submission for the XRPL Residency program. For inquiries, please contact the team.
+
+## 📄 License
+
+All rights reserved © 2025 Plyant
+
+## 🔗 Links
+
+- **Website**: [plyant.com](https://plyant.com)
+- **Email**: hello@plyant.com
+- **Location**: Based in Bali, Indonesia 🌴
+
+## 🏆 XRPL Residency
+
+This project is submitted for the XRPL Residency program, showcasing how blockchain technology can democratize climate finance and build resilient food systems.
+
+---
+
+Built with ❤️ by the Plyant team
