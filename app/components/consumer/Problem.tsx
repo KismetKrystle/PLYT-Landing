@@ -32,8 +32,8 @@ export default function ConsumerProblem() {
                         <p className="text-dark-gray/70 text-center leading-relaxed mb-6">
                             Global supply chains are breaking under extreme weather events, threatening food security worldwide.
                         </p>
-                        <div className="bg-brand-earth/10 rounded-lg p-4 text-center mt-auto w-full">
-                            <p className="text-3xl font-mono font-bold text-brand-earth mb-1">1,500</p>
+                        <div className="bg-coral/10 rounded-lg p-4 text-center mt-auto w-full">
+                            <p className="text-3xl font-mono font-bold text-coral mb-1">1,500</p>
                             <p className="text-sm text-brand-dark/70">Avg miles food travels</p>
                         </div>
                     </div>

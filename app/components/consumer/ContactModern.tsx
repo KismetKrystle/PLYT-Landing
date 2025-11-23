@@ -1,110 +1,102 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { useModal } from "../../context/ModalContext";
 
 export default function ContactModern() {
+    const { openModal } = useModal();
+
     return (
-        <section className="w-full bg-brand-dark text-brand-light pt-24 pb-12 px-4 md:px-8 overflow-hidden">
-            <div className="w-full max-w-[1800px] mx-auto flex flex-col">
+        <section id="join" className="bg-brand-dark text-brand-light py-24 relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 opacity-5">
+                <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+            </div>
 
-                {/* Massive Header */}
-                <motion.h2
-                    initial={{ opacity: 0, y: 50 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="font-display text-[12vw] leading-[0.8] uppercase tracking-tighter text-brand-light mb-12 text-center lg:text-left"
-                >
-                    CONTACT US NOW
-                </motion.h2>
-
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-
-                    {/* Left: Image/Map Placeholder */}
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.8 }}
-                        className="lg:col-span-5 relative aspect-[3/4] w-full bg-brand-earth/20 overflow-hidden"
-                    >
-                        {/* Placeholder for Contact Image */}
-                        <div className="absolute inset-0 flex items-center justify-center bg-brand-light/5">
-                            <span className="font-display text-brand-light/20 text-4xl">CONTACT IMAGE</span>
-                        </div>
-                    </motion.div>
-
-                    {/* Right: Links & Info */}
-                    <div className="lg:col-span-7 flex flex-col justify-between h-full">
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
-                            <motion.div
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.2 }}
-                            >
-                                <h3 className="font-bold uppercase tracking-widest mb-6 text-brand-earth">Visit</h3>
-                                <p className="text-xl font-serif leading-relaxed mb-4">
-                                    123 Urban Garden Way<br />
-                                    New York, NY 10012
-                                </p>
-                                <a href="#" className="inline-flex items-center gap-2 text-brand-light hover:text-brand-earth transition-colors">
-                                    Get Directions <ArrowUpRight className="w-4 h-4" />
-                                </a>
-                            </motion.div>
-
-                            <motion.div
-                                initial={{ opacity: 0, x: 20 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.3 }}
-                            >
-                                <h3 className="font-bold uppercase tracking-widest mb-6 text-brand-earth">Connect</h3>
-                                <ul className="space-y-4 text-xl font-serif">
-                                    <li>
-                                        <a href="mailto:hello@plyant.com" className="hover:text-brand-earth transition-colors">hello@plyant.com</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+15550000000" className="hover:text-brand-earth transition-colors">+1 (555) 000-0000</a>
-                                    </li>
-                                </ul>
-                            </motion.div>
-                        </div>
-
-                        {/* Social / Footer Links */}
-                        <motion.div
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    {/* Content */}
+                    <div>
+                        <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: 0.4 }}
-                            className="border-t border-brand-light/20 pt-8"
+                            className="font-display text-5xl md:text-6xl mb-8 uppercase leading-tight"
                         >
-                            <div className="flex flex-wrap gap-8 justify-between items-end">
-                                <div className="flex gap-8">
-                                    {['Instagram', 'Twitter', 'LinkedIn', 'Discord'].map((social) => (
-                                        <a key={social} href="#" className="text-sm font-bold uppercase tracking-widest hover:text-brand-earth transition-colors">
-                                            {social}
-                                        </a>
-                                    ))}
-                                </div>
+                            Ready to <span className="text-brand-earth">Grow</span><br />
+                            With Us?
+                        </motion.h2>
 
-                                <div className="text-sm text-brand-light/50">
-                                    © 2025 Plyant. All rights reserved.
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.1 }}
+                            className="font-serif text-xl text-brand-light/70 mb-12 max-w-lg"
+                        >
+                            Join the movement transforming urban spaces into thriving ecosystems.
+                            Whether you're a grower, a consumer, or a partner, there's a place for you.
+                        </motion.p>
+
+                        <div className="space-y-6 mb-12">
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-full bg-brand-light/10 flex items-center justify-center text-brand-earth">
+                                    <Mail className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <p className="text-sm text-brand-light/50 uppercase tracking-wider font-bold">Email Us</p>
+                                    <p className="text-lg">hello@plyant.io</p>
                                 </div>
                             </div>
-                        </motion.div>
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-full bg-brand-light/10 flex items-center justify-center text-brand-earth">
+                                    <MapPin className="w-6 h-6" />
+                                </div>
+                                <div>
+                                    <p className="text-sm text-brand-light/50 uppercase tracking-wider font-bold">Visit Us</p>
+                                    <p className="text-lg">Bali, Indonesia</p>
+                                </div>
+                            </div>
+                        </div>
 
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <button
+                                onClick={() => openModal('waitlist')}
+                                className="bg-brand-earth text-brand-dark px-8 py-4 font-bold uppercase tracking-wider hover:bg-white transition-colors flex items-center justify-center gap-2"
+                            >
+                                Join Waitlist
+                                <ArrowRight className="w-5 h-5" />
+                            </button>
+                            <button
+                                onClick={() => openModal('partnership')}
+                                className="border border-brand-light/20 text-brand-light px-8 py-4 font-bold uppercase tracking-wider hover:bg-brand-light/10 transition-colors"
+                            >
+                                Partner With Us
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Minimal Graphic / Form Placeholder */}
+                    <div className="relative h-full min-h-[400px] border border-brand-light/10 rounded-3xl p-8 flex flex-col justify-center items-center text-center bg-brand-light/5 backdrop-blur-sm">
+                        <div className="w-24 h-24 bg-brand-earth/20 rounded-full flex items-center justify-center mb-6">
+                            <svg className="w-12 h-12 text-brand-earth" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                            </svg>
+                        </div>
+                        <h3 className="font-display text-3xl uppercase mb-4">Be Part of the Future</h3>
+                        <p className="text-brand-light/60 max-w-md mb-8">
+                            We are building a decentralized network of urban farms.
+                            Sign up to get early access and updates.
+                        </p>
+                        <button
+                            onClick={() => openModal('waitlist')}
+                            className="text-brand-earth hover:text-white font-bold uppercase tracking-wider text-sm border-b border-brand-earth hover:border-white transition-all pb-1"
+                        >
+                            Get Started Now
+                        </button>
                     </div>
                 </div>
-
-                {/* Big Brand Footer */}
-                <div className="mt-24 text-center">
-                    <h1 className="font-display text-[15vw] leading-none text-brand-light/5 uppercase tracking-tighter select-none">
-                        PLYANT
-                    </h1>
-                </div>
-
             </div>
         </section>
     );

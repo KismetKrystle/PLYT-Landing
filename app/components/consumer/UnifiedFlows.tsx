@@ -99,11 +99,11 @@ export default function UnifiedFlows() {
 
                         {/* Steps Grid */}
                         <div className="lg:w-2/3 w-full">
-                            <div className={`grid grid-cols-1 md:grid-cols-${content[activeTab].steps.length > 3 ? '4' : '3'} gap-6`}>
+                            <div className="flex flex-col md:flex-row gap-4 w-full">
                                 {content[activeTab].steps.map((step, index) => (
                                     <div
                                         key={index}
-                                        className={`p-6 transition-colors ${step.isDark
+                                        className={`p-6 transition-colors flex-1 ${step.isDark
                                             ? "bg-brand-dark text-brand-light relative overflow-hidden group"
                                             : "bg-white border border-brand-dark/10 hover:border-brand-dark"
                                             }`}

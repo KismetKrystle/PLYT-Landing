@@ -73,16 +73,19 @@ export default function SystemArchitecture() {
 
                 <div className="max-w-5xl mx-auto">
                     {/* Flowchart */}
-                    <div className="space-y-4">
+                    <div className="space-y-0 relative pl-8 md:pl-0">
+                        {/* Continuous Line (Desktop) */}
+                        <div className="hidden md:block absolute left-[23px] top-6 bottom-6 w-0.5 bg-brand-dark/10"></div>
+
                         {steps.map((step, index) => (
-                            <div key={step.number} className="relative">
-                                {/* Connection Line */}
-                                {index < steps.length - 1 && (
-                                    <div className="absolute left-12 top-full w-0.5 h-4 bg-brand-dark/10 z-0"></div>
-                                )}
+                            <div key={step.number} className="relative md:pl-16 pb-8 last:pb-0 group">
+                                {/* Timeline Dot (Desktop) */}
+                                <div className="hidden md:flex absolute left-0 top-6 w-12 h-12 items-center justify-center z-10">
+                                    <div className="w-4 h-4 rounded-full bg-white border-4 border-brand-dark/20 group-hover:border-brand-earth transition-colors"></div>
+                                </div>
 
                                 {/* Step Card */}
-                                <div className="relative bg-white rounded-none p-6 border border-brand-dark/10 hover:border-brand-earth transition-all group shadow-sm hover:shadow-md">
+                                <div className="relative bg-white rounded-none p-6 border border-brand-dark/10 hover:border-brand-earth transition-all shadow-sm hover:shadow-md">
                                     <div className="flex items-start gap-6">
                                         {/* Number Badge */}
                                         <div className={`w-12 h-12 ${step.color === 'digital-teal' ? 'bg-brand-dark text-brand-light' : 'bg-brand-earth text-brand-light'} flex items-center justify-center shrink-0 relative z-10`}>
@@ -97,18 +100,12 @@ export default function SystemArchitecture() {
                                             <p className="text-brand-dark/80 mb-2 font-serif">{step.description}</p>
                                             <p className="text-brand-dark/50 text-sm font-mono">{step.details}</p>
                                         </div>
-
-                                        {/* Arrow Icon */}
-                                        <div className="hidden md:block">
-                                            <svg className={`w-6 h-6 text-brand-earth/50 group-hover:text-brand-earth transition-colors`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                            </svg>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         ))}
                     </div>
+
 
                     {/* Summary Box */}
                     <div className="mt-12 bg-brand-dark text-brand-light rounded-none p-8 border border-brand-earth/30">
@@ -143,6 +140,7 @@ export default function SystemArchitecture() {
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>

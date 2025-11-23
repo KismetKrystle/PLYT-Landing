@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function BlockchainTech() {
     return (
         <section className="bg-brand-dark py-24 relative overflow-hidden">
@@ -11,12 +13,28 @@ export default function BlockchainTech() {
             }}></div>
 
             <div className="container mx-auto px-6 relative z-10">
-                <h2 className="font-display text-4xl md:text-5xl text-brand-light text-center mb-4 uppercase tracking-wider">
-                    Powered by XRPL Blockchain
-                </h2>
-                <p className="text-center text-brand-light/60 mb-16 max-w-2xl mx-auto font-serif text-lg">
-                    Leveraging the speed, sustainability, and low cost of the XRP Ledger to democratize climate finance.
-                </p>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-20">
+                    <div className="lg:col-span-5 order-2 lg:order-1">
+                        <p className="text-brand-light/60 font-serif text-xl md:text-2xl leading-relaxed">
+                            Leveraging the speed, sustainability, and low cost of the XRP Ledger to democratize climate finance.
+                        </p>
+                    </div>
+                    <div className="lg:col-span-7 order-1 lg:order-2 text-right">
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="font-display text-[10vw] lg:text-[8vw] leading-[0.85] uppercase tracking-tighter text-brand-light"
+                        >
+                            Key XRPL
+                            <br />
+                            Features
+                        </motion.h2>
+                    </div>
+                </div>
+
+                {/* Separator Line */}
+                <div className="w-full h-px bg-brand-light/30 mb-20"></div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
                     {/* Feature 1 */}
@@ -89,55 +107,42 @@ export default function BlockchainTech() {
                         <p className="text-brand-light/60 text-sm">Payments in stable currency to protect farmers from volatility.</p>
                     </div>
 
-                    {/* Feature 6 */}
-                    <div className="border border-brand-earth/20 bg-brand-black/40 p-6 rounded-none hover:bg-brand-earth/10 hover:border-brand-earth hover:shadow-lg transition-all duration-300 group">
-                        <div className="flex justify-between items-start mb-4">
-                            <div className="w-10 h-10 bg-brand-earth/10 flex items-center justify-center group-hover:scale-110 transition-transform rounded-none">
-                                <svg className="w-6 h-6 text-brand-earth" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-                                </svg>
-                            </div>
-                            <span className="font-mono text-brand-earth text-xl font-bold">DEX</span>
-                        </div>
-                        <h3 className="font-display text-lg font-bold text-brand-light mb-2 uppercase tracking-wide">DEX Integration</h3>
-                        <p className="text-brand-light/60 text-sm">Seamless exchange between local currencies and crypto assets.</p>
-                    </div>
                 </div>
 
-                {/* Tech Diagram */}
-                <div className="flex justify-center items-center gap-4 md:gap-8 overflow-x-auto py-4">
+                {/* XRPL Flow Diagram */}
+                <div className="flex flex-col md:flex-row items-center justify-center gap-4 max-w-4xl mx-auto">
                     <div className="flex flex-col items-center">
-                        <div className="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center border-2 border-brand-earth shadow-lg">
+                        <div className="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center border-2 border-brand-earth shadow-lg z-10 relative">
                             <span className="font-bold text-brand-dark">User</span>
                         </div>
                     </div>
 
-                    <div className="flex-1 h-0.5 bg-brand-earth/50 relative min-w-[50px]">
-                        <div className="absolute top-1/2 left-0 w-2 h-2 bg-brand-earth rounded-full -translate-y-1/2 animate-ping"></div>
+                    <div className="relative flex-1 h-8 w-px md:h-px md:w-auto bg-brand-earth/50">
+                        <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-brand-earth rounded-full -translate-x-1/2 -translate-y-1/2 animate-ping"></div>
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <div className="w-16 h-16 rounded-full bg-brand-dark flex items-center justify-center border-2 border-brand-earth shadow-lg">
+                        <div className="w-16 h-16 rounded-full bg-brand-dark flex items-center justify-center border-2 border-brand-earth shadow-lg z-10 relative">
                             <span className="font-bold text-brand-light text-xs">Platform</span>
                         </div>
                     </div>
 
-                    <div className="flex-1 h-0.5 bg-brand-earth/50 relative min-w-[50px]">
-                        <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-brand-earth rounded-full -translate-y-1/2 animate-ping" style={{ animationDelay: "0.5s" }}></div>
+                    <div className="relative flex-1 h-8 w-px md:h-px md:w-auto bg-brand-earth/50">
+                        <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-brand-earth rounded-full -translate-x-1/2 -translate-y-1/2 animate-ping" style={{ animationDelay: "0.5s" }}></div>
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <div className="w-20 h-20 rounded-full bg-black flex items-center justify-center border-2 border-brand-earth shadow-[0_0_20px_rgba(196,164,132,0.4)] animate-pulse">
+                        <div className="w-20 h-20 rounded-full bg-black flex items-center justify-center border-2 border-brand-earth shadow-[0_0_20px_rgba(196,164,132,0.4)] animate-pulse z-10 relative">
                             <span className="font-bold text-brand-earth">XRPL</span>
                         </div>
                     </div>
 
-                    <div className="flex-1 h-0.5 bg-brand-earth/50 relative min-w-[50px]">
-                        <div className="absolute top-1/2 right-0 w-2 h-2 bg-brand-earth rounded-full -translate-y-1/2 animate-ping" style={{ animationDelay: "1s" }}></div>
+                    <div className="relative flex-1 h-8 w-px md:h-px md:w-auto bg-brand-earth/50">
+                        <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-brand-earth rounded-full -translate-x-1/2 -translate-y-1/2 animate-ping" style={{ animationDelay: "1s" }}></div>
                     </div>
 
                     <div className="flex flex-col items-center">
-                        <div className="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center border-2 border-brand-earth shadow-lg">
+                        <div className="w-16 h-16 rounded-full bg-brand-light flex items-center justify-center border-2 border-brand-earth shadow-lg z-10 relative">
                             <span className="font-bold text-brand-dark text-xs">Services</span>
                         </div>
                     </div>

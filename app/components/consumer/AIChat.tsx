@@ -1,9 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useModal } from "../../context/ModalContext";
 
 export default function AIChat() {
     const [activeCard, setActiveCard] = useState(0);
+    const { openModal } = useModal();
 
     const cards = [
         {
@@ -283,181 +286,90 @@ export default function AIChat() {
     ];
 
     return (
-        <section className="bg-brand-light py-12 relative overflow-hidden">
+        <section id="ai-chat" className="bg-brand-light py-24 relative overflow-hidden">
             <div className="container mx-auto px-6">
-                <div className="text-center mb-16">
-                    <h2 className="font-display text-5xl md:text-6xl text-brand-dark mb-4 uppercase leading-[0.9]">
-                        Meet Your AI<br />Food Assistant
-                    </h2>
-                    <p className="text-brand-dark/70 text-xl font-serif max-w-2xl mx-auto">
-                        One intelligent assistant to help you find food, learn to grow, and connect with your community
-                    </p>
+                <div className="flex flex-col lg:flex-row justify-between items-end mb-12 gap-8 border-b border-brand-dark/10 pb-12">
+                    <div className="max-w-3xl">
+                        <h2 className="font-display text-5xl md:text-6xl text-brand-dark mb-6 uppercase leading-[0.9]">
+                            Meet Your AI<br />Food Assistant
+                        </h2>
+                        <p className="text-brand-dark/70 text-xl font-serif max-w-2xl">
+                            One intelligent assistant to help you find food, learn to grow, and connect with your community
+                        </p>
+                    </div>
+                    <div className="shrink-0">
+                        <button
+                            onClick={() => openModal('waitlist')}
+                            className="inline-block bg-brand-dark text-brand-light px-8 py-4 rounded-none font-sans font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-brand-dark"
+                        >
+                            Try the AI Assistant
+                        </button>
+                    </div>
                 </div>
 
-                <div className="max-w-7xl mx-auto">
-                    {/* Carousel - Compressed Height */}
-                    <div className="relative mb-8">
-                        {/* Card Display - Side by Side Layout */}
-                        <div className="grid md:grid-cols-2 gap-8 items-center min-h-[400px]">
-                            {/* Left: Visual Content */}
-                            <div className="relative">
-                                <div className="h-[500px] flex items-center justify-center">
-                                    {cards[activeCard].content}
+                <div className="max-w-6xl mx-auto">
+                    <div className="grid md:grid-cols-12 gap-12 items-start">
+                        {/* Left Column: Navigation List */}
+                        <div className="md:col-span-5 space-y-0">
+                            {cards.map((card, i) => (
+                                <div key={i} className="border-b border-brand-dark/10 last:border-0">
+                                    <button
+                                        onClick={() => setActiveCard(i)}
+                                        className={`w-full text-left py-8 group transition-all duration-300 ${activeCard === i ? 'opacity-100' : 'opacity-40 hover:opacity-70'
+                                            }`}
+                                    >
+                                        <div className="flex items-baseline gap-6">
+                                            <span className={`font-display text-4xl ${activeCard === i ? 'text-brand-dark' : 'text-brand-dark/50'
+                                                }`}>
+                                                0{i + 1}
+                                            </span>
+                                            <div className="space-y-2">
+                                                <h3 className={`font-display text-2xl uppercase ${activeCard === i ? 'text-brand-dark' : 'text-brand-dark/80'
+                                                    }`}>
+                                                    {card.title}
+                                                </h3>
+                                                <AnimatePresence>
+                                                    {activeCard === i && (
+                                                        <motion.p
+                                                            initial={{ height: 0, opacity: 0 }}
+                                                            animate={{ height: "auto", opacity: 1 }}
+                                                            exit={{ height: 0, opacity: 0 }}
+                                                            className="text-dark-gray/70 leading-relaxed overflow-hidden"
+                                                        >
+                                                            {card.description}
+                                                        </motion.p>
+                                                    )}
+                                                </AnimatePresence>
+                                            </div>
+                                        </div>
+                                    </button>
                                 </div>
-                            </div>
+                            ))}
+                        </div>
 
-                            {/* Right: Text Content */}
-                            <div className="space-y-6">
-                                <div className={`inline-block px-4 py-2 rounded-none text-sm font-bold text-white mb-2 ${activeCard === 3 ? 'bg-sky-blue' : `bg-${cards[activeCard].color}`}`}>
-                                    Feature {activeCard + 1} of {cards.length}
-                                </div>
-                                <h3 className="font-display text-4xl uppercase text-brand-dark">
-                                    {cards[activeCard].title}
-                                </h3>
-                                <p className="text-dark-gray/70 text-lg leading-relaxed">
-                                    {cards[activeCard].description}
-                                </p>
-
-                                {/* Feature-specific details */}
-                                <div className="pt-4 space-y-3">
-                                    {activeCard === 0 && (
-                                        <>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-soft-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>Real-time availability updates</span>
-                                            </div>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-soft-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>Distance-based search</span>
-                                            </div>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-soft-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>Direct vendor connection</span>
-                                            </div>
-                                        </>
-                                    )}
-                                    {activeCard === 1 && (
-                                        <>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-warm-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>Step-by-step instructions</span>
-                                            </div>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-warm-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>Personalized for your space</span>
-                                            </div>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-warm-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>Expert tips and troubleshooting</span>
-                                            </div>
-                                        </>
-                                    )}
-                                    {activeCard === 2 && (
-                                        <>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-sage-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>Custom-built by local artisans</span>
-                                            </div>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-sage-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>100% recycled materials</span>
-                                            </div>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-sage-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>Fits any space and budget</span>
-                                            </div>
-                                        </>
-                                    )}
-                                    {activeCard === 3 && (
-                                        <>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-sky-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>Live environmental metrics</span>
-                                            </div>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-sky-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>Transparent impact tracking</span>
-                                            </div>
-                                            <div className="flex items-center gap-3 text-dark-gray/70">
-                                                <svg className="w-5 h-5 text-sky-blue" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                                </svg>
-                                                <span>Verifiable sustainability data</span>
-                                            </div>
-                                        </>
-                                    )}
-                                </div>
+                        {/* Right Column: Visual Content */}
+                        <div className="md:col-span-7 relative">
+                            <div className="sticky top-24">
+                                <AnimatePresence mode="wait">
+                                    <motion.div
+                                        key={activeCard}
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        exit={{ opacity: 0, x: -20 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="h-[500px] flex items-center justify-center"
+                                    >
+                                        {cards[activeCard].content}
+                                    </motion.div>
+                                </AnimatePresence>
                             </div>
                         </div>
                     </div>
 
-                    {/* Navigation Dots */}
-                    <div className="flex justify-center gap-3 mb-8">
-                        {cards.map((card, i) => (
-                            <button
-                                key={i}
-                                onClick={() => setActiveCard(i)}
-                                className={`transition-all duration-300 ${i === activeCard
-                                    ? `bg-${card.color} w-12 h-3`
-                                    : 'bg-dark-gray/20 w-3 h-3 hover:bg-dark-gray/40'
-                                    } rounded-none transition-all duration-300`}
-                                aria-label={`View ${card.title}`}
-                            ></button>
-                        ))}
-                    </div>
 
-                    {/* Arrow Navigation */}
-                    <div className="flex justify-center gap-4">
-                        <button
-                            onClick={() => setActiveCard((activeCard - 1 + cards.length) % cards.length)}
-                            className="w-12 h-12 bg-brand-dark text-brand-light rounded-none flex items-center justify-center hover:bg-brand-dark/80 transition-colors border border-brand-dark"
-                            aria-label="Previous card"
-                        >
-                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </button>
-                        <button
-                            onClick={() => setActiveCard((activeCard + 1) % cards.length)}
-                            className="w-12 h-12 bg-brand-dark text-brand-light rounded-none flex items-center justify-center hover:bg-brand-dark/80 transition-colors border border-brand-dark"
-                            aria-label="Next card"
-                        >
-                            <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
-                    </div>
-
-                    {/* CTA */}
-                    <div className="text-center mt-12">
-                        <a href="#join" className="inline-block bg-brand-dark text-brand-light px-10 py-4 rounded-none font-sans font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-brand-dark">
-                            Try the AI Assistant
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>
     );
 }
+

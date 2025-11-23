@@ -2,10 +2,12 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useModal } from "../../context/ModalContext";
 
 export default function ConsumerNavbar({ className = "" }: { className?: string }) {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const { openModal } = useModal();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -29,24 +31,21 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center gap-8">
-                        <a href="#about" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <Link href="/about" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
                             About
-                        </a>
-                        <a href="#features" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        </Link>
+                        <a href="#ai-chat" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
                             Features
                         </a>
-                        <a href="#how-it-works" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <a href="#unified-flows" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
                             How It Works
                         </a>
-                        <a href="#partners" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
-                            Partners
-                        </a>
-                        <Link
-                            href="#join"
+                        <button
+                            onClick={() => openModal('waitlist')}
                             className="bg-sage-green text-white px-6 py-2 rounded-full font-sans font-semibold hover:bg-soft-teal hover:shadow-lg transition-all"
                         >
-                            Join Waitlist
-                        </Link>
+                            Join Us
+                        </button>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -68,24 +67,24 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
                 {/* Mobile Menu */}
                 {mobileMenuOpen && (
                     <div className="md:hidden mt-4 pb-4 space-y-4">
-                        <a href="#about" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <Link href="/about" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
                             About
-                        </a>
-                        <a href="#features" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        </Link>
+                        <a href="#ai-chat" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
                             Features
                         </a>
-                        <a href="#how-it-works" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <a href="#unified-flows" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
                             How It Works
                         </a>
-                        <a href="#partners" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
-                            Partners
-                        </a>
-                        <Link
-                            href="#join"
-                            className="block text-center bg-sage-green text-white px-6 py-2 rounded-full font-sans font-semibold hover:bg-soft-teal transition-colors"
+                        <button
+                            onClick={() => {
+                                openModal('waitlist');
+                                setMobileMenuOpen(false);
+                            }}
+                            className="block w-full text-center bg-sage-green text-white px-6 py-2 rounded-full font-sans font-semibold hover:bg-soft-teal transition-colors"
                         >
-                            Join Waitlist
-                        </Link>
+                            Join Us
+                        </button>
                     </div>
                 )}
             </div>

@@ -31,15 +31,16 @@ export default function HeroModern() {
                     transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
                     className="lg:col-span-8 relative aspect-[16/9] lg:aspect-[16/8] w-full overflow-hidden"
                 >
-                    {/* Placeholder for Hero Image - using a colored block if image fails, but ideally a real image */}
-                    <div className="absolute inset-0 bg-brand-dark/10">
-                        {/* We will use a placeholder image from the public folder or a color block for now */}
-                        <div className="w-full h-full bg-brand-earth/20 flex items-center justify-center">
-                            <span className="font-display text-brand-dark/20 text-4xl">HERO IMAGE</span>
-                        </div>
+                    {/* Hero Image */}
+                    <div className="absolute inset-0">
+                        <Image
+                            src="/hero_urban_nature.png"
+                            alt="Futuristic urban rooftop garden with lush greenery and vertical farming towers"
+                            fill
+                            className="object-cover"
+                            priority
+                        />
                     </div>
-                    {/* If you have a real image, uncomment below */}
-                    {/* <Image src="/hero-image.jpg" alt="Urban Nature" fill className="object-cover" /> */}
                 </motion.div>
 
                 {/* Right: Content */}
@@ -55,14 +56,15 @@ export default function HeroModern() {
                         </p>
 
                         <div className="flex flex-col gap-4">
-                            <motion.button
+                            <motion.a
+                                href="#ai-chat"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                                 className="group w-full bg-brand-dark text-brand-light py-4 px-6 text-lg font-bold uppercase tracking-wider flex items-center justify-between border border-brand-dark hover:bg-transparent hover:text-brand-dark transition-colors"
                             >
                                 Start Growing
                                 <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
-                            </motion.button>
+                            </motion.a>
 
                             <a
                                 href="#technology"
