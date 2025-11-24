@@ -10,22 +10,25 @@ import ClimateResilience from "@/app/components/ClimateResilience";
 import BaliPilot from "@/app/components/BaliPilot";
 import Partnerships from "@/app/components/consumer/Partnerships";
 import ContactModern from "@/app/components/consumer/ContactModern";
+import { ModalProvider } from "@/app/context/ModalContext";
 
 export default function TechnologyPage() {
     return (
-        <main>
-            <ConsumerNavbar />
-            <Hero />
-            <Problem />
-            <Solution />
-            <DigitalTwin />
-            <ImpactFinance />
-            <SystemArchitecture />
-            <BlockchainTech />
-            <ClimateResilience />
-            <BaliPilot />
-            <Partnerships />
-            <ContactModern />
-        </main>
+        <ModalProvider>
+            <main>
+                <ConsumerNavbar />
+                <Hero />
+                <Problem />
+                <Solution />
+                <DigitalTwin />
+                <ImpactFinance />
+                <SystemArchitecture />
+                <BlockchainTech />
+                <ClimateResilience />
+                <BaliPilot />
+                <Partnerships />
+                <ContactModern />
+            </main>
+        </ModalProvider>
     );
 }

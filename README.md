@@ -10,7 +10,7 @@ Plyant is building **The Network of Urban Nature** - transforming concrete jungl
 
 ### Consumer Landing Page
 - **Hero Section**: Dynamic introduction with urban nature imagery
-- **Problem Statement**: Interactive display of climate and food security challenges
+- **Problem/Solution Toggle**: Interactive tabbed interface comparing the current crisis with Plyant's resilient solutions
 - **How It Works**: Modern flow visualization of the Plyant ecosystem
 - **AI Assistant**: Carousel showcasing AI-powered shopping and growing tools
 - **Unified Flows**: Tabbed interface for Money Works, AI Shopping, and AI Growing
@@ -80,7 +80,7 @@ Plyant-UN-Landing2025/
 │   ├── components/
 │   │   ├── consumer/          # Consumer-facing components
 │   │   │   ├── HeroModern.tsx
-│   │   │   ├── Problem.tsx
+│   │   │   ├── ProblemSolutionToggle.tsx
 │   │   │   ├── HowItWorksModern.tsx
 │   │   │   ├── AIChat.tsx
 │   │   │   ├── UnifiedFlows.tsx
@@ -165,7 +165,7 @@ All rights reserved © 2025 Plyant
 ## 🔗 Links
 
 - **Website**: [plyant.com](https://plyant.com)
-- **Email**: hello@plyant.com
+- **Email**: krystle@plyant.com
 - **Location**: Based in Bali, Indonesia 🌴
 
 ## 🏆 XRPL Residency
