@@ -16,7 +16,7 @@ export default function PartnersBanner() {
     const duplicatedPartners = [...partners, ...partners, ...partners, ...partners];
 
     return (
-        <section className="bg-brand-dark text-brand-light py-6 overflow-hidden border-y border-brand-light/10">
+        <section className="bg-brand-dark text-brand-light py-3 mt-6 overflow-hidden border-y border-brand-light/10">
             <div className="flex whitespace-nowrap">
                 <motion.div
                     className="flex gap-16 items-center"

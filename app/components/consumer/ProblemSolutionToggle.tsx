@@ -97,7 +97,7 @@ export default function ProblemSolutionToggle() {
     ];
 
     return (
-        <section className="bg-brand-light pt-24 pb-12 relative overflow-hidden">
+        <section className="bg-brand-light pt-12 pb-12 relative overflow-hidden">
             {/* Background Accent */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-brand-dark/5 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-brand-earth/10 rounded-full blur-3xl"></div>
