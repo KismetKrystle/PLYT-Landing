@@ -43,7 +43,7 @@ export default function Footer() {
                             {["Twitter", "LinkedIn", "Instagram"].map((social) => (
                                 <a
                                     key={social}
-                                    href={social === "LinkedIn" ? "https://linkedin.com/in/YOUR_PROFILE" : "#"}
+                                    href={social === "LinkedIn" ? "https://www.linkedin.com/in/krystle-r-wilson" : "#"}
                                     className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-500 hover:border-bamboo-gold hover:text-bamboo-gold hover:bg-bamboo-gold/10 transition-all duration-300"
                                     aria-label={social}
                                 >
