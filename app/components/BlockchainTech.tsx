@@ -14,12 +14,7 @@ export default function BlockchainTech() {
 
             <div className="container mx-auto px-6 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-20">
-                    <div className="lg:col-span-5 order-2 lg:order-1">
-                        <p className="text-brand-light/60 font-serif text-xl md:text-2xl leading-relaxed">
-                            Leveraging the speed, sustainability, and low cost of the XRP Ledger to democratize climate finance.
-                        </p>
-                    </div>
-                    <div className="lg:col-span-7 order-1 lg:order-2 text-right">
+                    <div className="lg:col-span-6 order-1 lg:order-1">
                         <motion.h2
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
@@ -30,6 +25,11 @@ export default function BlockchainTech() {
                             <br />
                             Features
                         </motion.h2>
+                    </div>
+                    <div className="lg:col-span-6 order-2 lg:order-2 text-right">
+                        <p className="text-brand-light/60 font-serif text-xl md:text-2xl leading-relaxed">
+                            Leveraging the speed, sustainability, and low cost of the XRP Ledger to democratize climate finance.
+                        </p>
                     </div>
                 </div>
 

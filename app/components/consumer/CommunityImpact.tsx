@@ -78,7 +78,7 @@ export default function CommunityImpact() {
         },
         {
             icon: Package,
-            value: <Counter end={0} />,
+            value: <Counter end={50} />,
             title: "Food Miles",
             description: "For home-grown produce",
             color: "warm-gold",
@@ -163,7 +163,7 @@ export default function CommunityImpact() {
             <div className="container mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="font-display text-5xl md:text-6xl text-brand-dark mb-4 uppercase leading-[0.9]">
-                        Building Climate<br />Resilience
+                        The Impact <br />
                     </h2>
                     <p className="text-brand-dark/70 text-xl font-serif max-w-2xl mx-auto">
                         Every local purchase, every plant grown, makes our community stronger
