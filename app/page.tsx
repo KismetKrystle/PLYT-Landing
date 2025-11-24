@@ -39,8 +39,6 @@ export default function Home() {
 
         <SustainabilityStatement />
 
-        <SDGBanner />
-
         <UnifiedFlows />
 
         <AIChat />

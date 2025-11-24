@@ -1,7 +1,8 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+
 
 export default function ProblemSolutionToggle() {
     const [activeTab, setActiveTab] = useState<'problem' | 'solution'>('problem');
@@ -200,6 +201,8 @@ export default function ProblemSolutionToggle() {
                     </AnimatePresence>
                 </div>
             </div>
+
+
 
             {/* Section Separator */}
             <div className="absolute bottom-0 left-0 w-full h-px bg-brand-dark/10"></div>

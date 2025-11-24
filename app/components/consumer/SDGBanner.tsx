@@ -14,7 +14,7 @@ export default function SDGBanner() {
     const duplicatedGoals = [...goals, ...goals, ...goals, ...goals, ...goals, ...goals];
 
     return (
-        <section className="bg-brand-light text-brand-dark py-3 overflow-hidden border-b border-brand-dark/10">
+        <section className="bg-brand-light text-brand-dark py-3 overflow-hidden">
             <div className="flex whitespace-nowrap">
                 <motion.div
                     className="flex gap-16 items-center"

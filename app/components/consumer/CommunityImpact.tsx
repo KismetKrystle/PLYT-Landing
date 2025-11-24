@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { LucideIcon, Globe, Recycle, Droplets, Package, Sprout } from "lucide-react";
+import SDGBanner from "./SDGBanner";
 
 const Counter = ({ end, suffix = "", prefix = "" }: { end: number; suffix?: string; prefix?: string }) => {
     const [count, setCount] = useState(0);
@@ -171,7 +172,7 @@ export default function CommunityImpact() {
                 </div>
 
                 {/* Impact Metrics */}
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0 mb-24 border-y border-brand-dark/10 py-12">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 md:gap-0 mb-24 border-t border-brand-dark/10 py-12">
                     {impactMetrics.map((metric, index) => (
                         <motion.div
                             key={index}
@@ -194,6 +195,10 @@ export default function CommunityImpact() {
                             )}
                         </motion.div>
                     ))}
+                </div>
+
+                <div className="mb-24">
+                    <SDGBanner />
                 </div>
 
                 {/* Benefits Grid */}
