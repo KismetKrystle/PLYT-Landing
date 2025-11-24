@@ -34,7 +34,7 @@ export default function HeroModern() {
                     {/* Hero Image */}
                     <div className="absolute inset-0">
                         <Image
-                            src="/hero_urban_nature.png"
+                            src="/hero-new.jpg"
                             alt="Futuristic urban rooftop garden with lush greenery and vertical farming towers"
                             fill
                             className="object-cover"

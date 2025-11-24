@@ -30,34 +30,48 @@ export default function Footer() {
                                     {item}
                                 </Link>
                             ))}
-                            href="#"
-                            className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-500 hover:border-bamboo-gold hover:text-bamboo-gold hover:bg-bamboo-gold/10 transition-all duration-300"
-                            aria-label={social}
-                                >
-                            {/* Placeholder Icons */}
-                            <div className="w-4 h-4 bg-current rounded-sm"></div>
-                        </a>
-                            ))}
+                        </div>
                     </div>
-                    <p className="text-gray-600 text-xs mt-4">Based in Bali, Indonesia</p>
-                </div>
-            </div>
 
-            {/* Bottom Bar */}
-            <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p className="text-gray-600 text-xs">
-                    &copy; {new Date().getFullYear()} Plyant. All rights reserved.
-                </p>
-                <div className="flex gap-6">
-                    <Link href="#" className="text-gray-600 hover:text-gray-400 text-xs transition-colors">
-                        Privacy Policy
-                    </Link>
-                    <Link href="#" className="text-gray-600 hover:text-gray-400 text-xs transition-colors">
-                        Terms of Service
-                    </Link>
+                    {/* Right Column: Contact */}
+                    <div className="flex flex-col space-y-4 md:items-end">
+                        <h4 className="text-cream font-sans font-bold mb-2">Connect</h4>
+                        <a href="mailto:krystle@plyant.com" className="font-mono text-digital-teal hover:text-digital-teal/80 transition-colors">
+                            krystle@plyant.com
+                        </a>
+                        <div className="flex gap-4">
+                            {["Twitter", "LinkedIn", "Instagram"].map((social) => (
+                                <a
+                                    key={social}
+                                    href={social === "LinkedIn" ? "https://linkedin.com/in/YOUR_PROFILE" : "#"}
+                                    className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center text-gray-500 hover:border-bamboo-gold hover:text-bamboo-gold hover:bg-bamboo-gold/10 transition-all duration-300"
+                                    aria-label={social}
+                                >
+                                    {/* Placeholder Icons */}
+                                    <div className="w-4 h-4 bg-current rounded-sm"></div>
+                                </a>
+                            ))}
+                        </div>
+                        <p className="text-gray-600 text-xs mt-4">Based in Bali, Indonesia</p>
+                    </div>
+                </div>
+
+
+                {/* Bottom Bar */}
+                <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p className="text-gray-600 text-xs">
+                        &copy; {new Date().getFullYear()} Plyant. All rights reserved.
+                    </p>
+                    <div className="flex gap-6">
+                        <Link href="#" className="text-gray-600 hover:text-gray-400 text-xs transition-colors">
+                            Privacy Policy
+                        </Link>
+                        <Link href="#" className="text-gray-600 hover:text-gray-400 text-xs transition-colors">
+                            Terms of Service
+                        </Link>
+                    </div>
                 </div>
             </div>
-        </div>
         </footer >
     );
 }

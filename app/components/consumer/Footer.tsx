@@ -32,7 +32,7 @@ export default function ConsumerFooter() {
                         <ul className="space-y-2">
                             <li><a href="mailto:krystle@plyant.com" className="text-warm-white/70 hover:text-sage-green transition-colors">krystle@plyant.com</a></li>
                             <li><a href="#" className="text-warm-white/70 hover:text-sage-green transition-colors">Instagram</a></li>
-                            <li><a href="#" className="text-warm-white/70 hover:text-sage-green transition-colors">LinkedIn</a></li>
+                            <li><a href="https://linkedin.com/in/YOUR_PROFILE" className="text-warm-white/70 hover:text-sage-green transition-colors">LinkedIn</a></li>
                         </ul>
                     </div>
                 </div>
