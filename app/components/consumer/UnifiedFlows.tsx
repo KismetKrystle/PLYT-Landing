@@ -7,9 +7,9 @@ export default function UnifiedFlows() {
     const [activeTab, setActiveTab] = useState(0);
 
     const tabs = [
-        { id: 0, label: "Money Works" },
-        { id: 1, label: "AI Shopping" },
-        { id: 2, label: "AI Growing" },
+        { id: 0, label: "AI Shopping" },
+        { id: 1, label: "AI Growing" },
+        { id: 2, label: "Money Works" },
     ];
 
     interface Step {
@@ -23,34 +23,34 @@ export default function UnifiedFlows() {
     const content: { id: number; title: string; subtitle: string; steps: Step[] }[] = [
         {
             id: 0,
+            title: "AI SHOPS\nFOR YOU",
+            subtitle: "Your personal produce concierge.",
+            steps: [
+                { icon: "🗣️", title: "1. Tell AI", desc: "Input produce, location, budget, time & preferences." },
+                { icon: "🔍", title: "2. Search", desc: "AI scans database for products in your area." },
+                { icon: "📦", title: "3. Optimize", desc: "Generates package options based on proximity & budget." },
+                { icon: "💳", title: "4. Pay", desc: "Select package and submit payment.", isDark: true },
+            ]
+        },
+        {
+            id: 1,
+            title: "AI HELPS\nYOU PICK",
+            subtitle: "Expert guidance to pick the perfect system",
+            steps: [
+                { icon: "🌱", title: "1. Your Goals", desc: "Tell AI what you want to grow, budget & space." },
+                { icon: "🔎", title: "2. Discovery", desc: "AI finds products, builders & services." },
+                { icon: "✨", title: "3. Options", desc: "AI generates tailored team & growing options." },
+                { icon: "✅", title: "4. Start", desc: "Select option and submit payment.", isDark: true },
+            ]
+        },
+        {
+            id: 2,
             title: "MONEY WORKS\nFOR YOU",
             subtitle: "Deposit funds, buy local, and watch your unused balance grow automatically.",
             steps: [
                 { icon: "💵", title: "1. Deposit", desc: "Add money to your Plyant wallet.", extra: <div className="font-mono text-lg font-bold text-brand-earth">$100 <span className="text-xs font-normal text-brand-dark/40">Initial</span></div> },
                 { icon: "🛒", title: "2. Buy Local", desc: "Support local growers & artisans.", extra: <div className="font-mono text-lg font-bold text-brand-earth">$60 <span className="text-xs font-normal text-brand-dark/40">Spent</span></div> },
                 { icon: "📈", title: "3. Earn Yield", desc: "Unused balance grows automatically.", extra: <div className="flex items-end gap-2"><div className="font-mono text-2xl font-bold text-brand-earth">+$2.80</div><div className="text-xs text-brand-light/50 mb-1">Annual Est.</div></div>, isDark: true },
-            ]
-        },
-        {
-            id: 1,
-            title: "AI SHOPS\nFOR YOU",
-            subtitle: "Your personal produce concierge.",
-            steps: [
-                { icon: "🗣️", title: "1. Tell AI", desc: "Input produce, location, budget, time & preferences." },
-                { icon: "🔍", title: "2. Search", desc: "AI scans database for products in your area." },
-                { icon: "📦", title: "3. Optimize", desc: "Generates package based on proximity & budget." },
-                { icon: "💳", title: "4. Pay", desc: "Select package and submit payment.", isDark: true },
-            ]
-        },
-        {
-            id: 2,
-            title: "AI HELPS\nYOU PICK",
-            subtitle: "Expert guidance to pick the perfect system",
-            steps: [
-                { icon: "🌱", title: "1. Your Goals", desc: "Tell AI what you want to grow, budget & space." },
-                { icon: "🔎", title: "2. Discovery", desc: "AI finds products, builders & services." },
-                { icon: "✨", title: "3. Options", desc: "AI generates tailored growing solutions." },
-                { icon: "✅", title: "4. Start", desc: "Select option and submit payment.", isDark: true },
             ]
         },
     ];

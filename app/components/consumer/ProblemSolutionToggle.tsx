@@ -60,7 +60,7 @@ export default function ProblemSolutionToggle() {
             ),
             title: "Local Resilience",
             description: "Hyper-local food systems eliminate long supply chains, making communities climate-resilient.",
-            stat: "0",
+            stat: "0 - 100",
             label: "Food miles locally",
             color: "sage-green",
             bg: "bg-sage-green/10",

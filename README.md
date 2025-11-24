@@ -41,7 +41,7 @@ Plyant is building **The Network of Urban Nature** - transforming concrete jungl
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/KismetKode/PLYANT-Landing.git
+git clone https://github.com/KismetKrystle/PLYANTLanding.git
 cd Plyant-UN-Landing2025
 ```
 

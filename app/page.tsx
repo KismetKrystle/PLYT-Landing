@@ -1,6 +1,7 @@
 import ConsumerNavbar from "./components/consumer/Navbar";
 import HeroModern from "./components/consumer/HeroModern";
 import HowItWorksModern from "./components/consumer/HowItWorksModern";
+import SustainabilityStatement from "./components/consumer/SustainabilityStatement";
 import ProblemSolutionToggle from "./components/consumer/ProblemSolutionToggle";
 import AIChat from "./components/consumer/AIChat";
 import UnifiedFlows from "./components/consumer/UnifiedFlows";
@@ -32,14 +33,13 @@ export default function Home() {
 
         <HowItWorksModern />
 
-        <AIChat />
-
-        {/* Divider between AIChat and UnifiedFlows */}
-        <div className="w-full h-px bg-brand-dark/10"></div>
+        <SustainabilityStatement />
 
         <UnifiedFlows />
 
-        {/* Divider between UnifiedFlows and CommunityImpact */}
+        <AIChat />
+
+        {/* Divider between AIChat and CommunityImpact */}
         <div className="w-full h-px bg-brand-dark/10"></div>
 
         <CommunityImpact />

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function HeroModern() {
     return (
-        <section className="relative w-full min-h-screen bg-brand-light text-brand-black overflow-hidden pt-24 pb-12 px-4 md:px-8 flex flex-col">
+        <section className="relative w-full min-h-screen bg-brand-light text-brand-black overflow-hidden pt-24 pb-6 px-4 md:px-8 flex flex-col">
             {/* Massive Header */}
             <div className="w-full max-w-[1800px] mx-auto mb-8">
                 <motion.h1
@@ -22,7 +22,7 @@ export default function HeroModern() {
             </div>
 
             {/* Split Content */}
-            <div className="w-full max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div className="w-full max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
 
                 {/* Left: Image */}
                 <motion.div
@@ -35,7 +35,7 @@ export default function HeroModern() {
                     <div className="absolute inset-0">
                         <Image
                             src="/hero-new.jpg"
-                            alt="Futuristic urban rooftop garden with lush greenery and vertical farming towers"
+                            alt="Local fresh produce delivered and urban home grow system"
                             fill
                             className="object-cover"
                             priority
@@ -44,15 +44,14 @@ export default function HeroModern() {
                 </motion.div>
 
                 {/* Right: Content */}
-                <div className="lg:col-span-4 flex flex-col justify-between h-full pt-4 lg:pt-0">
+                <div className="lg:col-span-4 flex flex-col justify-between pt-4 lg:pt-0">
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <p className="text-xl md:text-2xl font-serif leading-relaxed text-brand-dark mb-8">
-                            The network that connects urban spaces with regenerative agriculture.
-                            Transforming concrete jungles into living, breathing ecosystems.
+                            Curated local produce delivered. Space-optimized grow systems. Personalized growing guidance. Your intelligent network for food independence.
                         </p>
 
                         <div className="flex flex-col gap-4">
@@ -81,15 +80,19 @@ export default function HeroModern() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 0.6 }}
-                        className="mt-12 lg:mt-auto pt-8 border-t border-brand-dark/20"
+                        className="mt-8 pt-8 border-t border-brand-dark/20"
                     >
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="flex flex-row items-start justify-between gap-4 w-full">
                             <div>
-                                <span className="block font-display text-4xl text-brand-earth">50+</span>
-                                <span className="text-sm uppercase tracking-wide font-bold">Cities</span>
+                                <span className="block font-display text-4xl text-brand-dark/40">Q4</span>
+                                <span className="text-sm uppercase tracking-wide font-bold text-brand-dark/60">Goals</span>
                             </div>
                             <div>
-                                <span className="block font-display text-4xl text-brand-earth">10k</span>
+                                <span className="block font-display text-4xl text-brand-earth">5+</span>
+                                <span className="text-sm uppercase tracking-wide font-bold">Communities</span>
+                            </div>
+                            <div>
+                                <span className="block font-display text-4xl text-brand-earth">300+</span>
                                 <span className="text-sm uppercase tracking-wide font-bold">Gardens</span>
                             </div>
                         </div>
