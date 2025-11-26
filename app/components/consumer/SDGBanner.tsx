@@ -18,7 +18,7 @@ export default function SDGBanner() {
             <div className="flex whitespace-nowrap">
                 <motion.div
                     className="flex gap-16 items-center"
-                    animate={{ x: [0, -1000] }}
+                    animate={{ x: [0, -2000] }}
                     transition={{
                         repeat: Infinity,
                         duration: 40,

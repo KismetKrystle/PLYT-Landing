@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 
 export default function PartnersBanner() {
     const partners = [
-        "Pablo Luna Studio",
-        "Pering Farm Bali",
-        "Local Vendors",
-        "UN SDG Goals",
-        "Regenerative Bali",
-        "Future Food Systems"
+        "Future Food Systems",
+        "Buyamia",
+        "Local Farmers",
+        "Local Artisans",
+        "4-UN SDG Goals",
+        "Regenerative Local Food Economies"
     ];
 
     // Duplicate the list to ensure seamless looping
