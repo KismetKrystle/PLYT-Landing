@@ -60,12 +60,12 @@ export default function UnifiedFlows() {
             <div className="w-full max-w-[1800px] mx-auto">
 
                 {/* Tabs Navigation */}
-                <div className="flex flex-wrap border-b border-brand-dark/10 mb-12">
+                <div className="flex flex-nowrap border-b border-brand-dark/10 mb-8 md:mb-12">
                     {tabs.map((tab) => (
                         <button
                             key={tab.id}
                             onClick={() => setActiveTab(tab.id)}
-                            className={`px-8 py-4 font-display text-xl uppercase tracking-wider transition-all duration-300 border-t border-x ${activeTab === tab.id
+                            className={`flex-1 px-2 py-3 md:px-8 md:py-4 font-display text-xs md:text-xl uppercase tracking-wider transition-all duration-300 border-t border-x ${activeTab === tab.id
                                 ? "bg-brand-dark text-brand-light border-brand-dark"
                                 : "bg-transparent text-brand-dark/50 border-transparent hover:text-brand-dark hover:bg-brand-dark/5"
                                 }`}
@@ -73,8 +73,8 @@ export default function UnifiedFlows() {
                             {tab.label}
                         </button>
                     ))}
-                    {/* Filler line to complete the border */}
-                    <div className="flex-grow border-b border-brand-dark/10 transform translate-y-[1px]"></div>
+                    {/* Filler line to complete the border - hidden on mobile as tabs take full width */}
+                    <div className="hidden md:block flex-grow border-b border-brand-dark/10 transform translate-y-[1px]"></div>
                 </div>
 
                 {/* Content Area */}
@@ -88,7 +88,7 @@ export default function UnifiedFlows() {
                         className="flex flex-col lg:flex-row items-center justify-between gap-12"
                     >
                         {/* Header */}
-                        <div className="lg:w-1/3">
+                        <div className="lg:w-1/3 text-left">
                             <h2 className="font-display text-5xl md:text-6xl uppercase leading-[0.9] text-brand-dark mb-4 whitespace-pre-line">
                                 {content[activeTab].title}
                             </h2>

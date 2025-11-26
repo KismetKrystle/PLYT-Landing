@@ -172,7 +172,7 @@ export default function CommunityImpact() {
                 </div>
 
                 {/* Impact Metrics */}
-                <div className="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-0 mb-24 border-t border-brand-dark/10 py-12">
+                <div className="grid grid-cols-2 md:flex md:flex-row justify-between items-start md:items-center gap-x-4 gap-y-12 md:gap-0 mb-24 border-t border-brand-dark/10 py-12">
                     {impactMetrics.map((metric, index) => (
                         <motion.div
                             key={index}
