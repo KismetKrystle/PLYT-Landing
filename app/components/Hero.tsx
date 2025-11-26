@@ -5,11 +5,21 @@ import Link from "next/link";
 
 export default function Hero() {
     const [scrollY, setScrollY] = useState(0);
+    const [particles, setParticles] = useState<Array<{ width: string; height: string; left: string; top: string; delay: string; duration: string }>>([]);
 
     useEffect(() => {
         const handleScroll = () => {
             setScrollY(window.scrollY);
         };
+
+        setParticles([...Array(10)].map(() => ({
+            width: Math.random() * 10 + 5 + "px",
+            height: Math.random() * 10 + 5 + "px",
+            left: Math.random() * 100 + "%",
+            top: Math.random() * 100 + "%",
+            delay: Math.random() * 5 + "s",
+            duration: Math.random() * 10 + 10 + "s",
+        })));
 
         window.addEventListener("scroll", handleScroll);
         return () => window.removeEventListener("scroll", handleScroll);
@@ -31,17 +41,17 @@ export default function Hero() {
 
             {/* Floating Particles (CSS Animation) */}
             <div className="absolute inset-0 z-10 pointer-events-none">
-                {[...Array(10)].map((_, i) => (
+                {particles.map((p, i) => (
                     <div
                         key={i}
                         className="absolute rounded-full bg-brand-earth/30 blur-sm animate-float"
                         style={{
-                            width: Math.random() * 10 + 5 + "px",
-                            height: Math.random() * 10 + 5 + "px",
-                            left: Math.random() * 100 + "%",
-                            top: Math.random() * 100 + "%",
-                            animationDelay: Math.random() * 5 + "s",
-                            animationDuration: Math.random() * 10 + 10 + "s",
+                            width: p.width,
+                            height: p.height,
+                            left: p.left,
+                            top: p.top,
+                            animationDelay: p.delay,
+                            animationDuration: p.duration,
                         }}
                     ></div>
                 ))}
