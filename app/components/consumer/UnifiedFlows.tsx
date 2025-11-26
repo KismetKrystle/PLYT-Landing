@@ -99,11 +99,11 @@ export default function UnifiedFlows() {
 
                         {/* Steps Grid */}
                         <div className="lg:w-2/3 w-full">
-                            <div className="flex flex-col md:flex-row gap-4 w-full">
+                            <div className="grid grid-cols-2 md:flex md:flex-row gap-3 md:gap-4 w-full">
                                 {content[activeTab].steps.map((step, index) => (
                                     <div
                                         key={index}
-                                        className={`p-6 transition-colors flex-1 ${step.isDark
+                                        className={`p-4 md:p-6 transition-colors md:flex-1 rounded-xl ${step.isDark
                                             ? "bg-brand-dark text-brand-light relative overflow-hidden group"
                                             : "bg-white border border-brand-dark/10 hover:border-brand-dark"
                                             }`}
@@ -111,18 +111,18 @@ export default function UnifiedFlows() {
                                         {step.isDark ? (
                                             <>
                                                 <div className="relative z-10">
-                                                    <div className="text-4xl mb-4">{step.icon}</div>
-                                                    <h3 className="font-display text-2xl uppercase text-brand-earth mb-2">{step.title}</h3>
-                                                    <p className="font-sans text-sm text-brand-light/70 mb-3">{step.desc}</p>
+                                                    <div className="text-3xl md:text-4xl mb-3 md:mb-4">{step.icon}</div>
+                                                    <h3 className="font-display text-lg md:text-2xl uppercase text-brand-earth mb-2 leading-tight">{step.title}</h3>
+                                                    <p className="font-sans text-xs md:text-sm text-brand-light/70 mb-3 leading-snug">{step.desc}</p>
                                                     {step.extra}
                                                 </div>
-                                                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-earth/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:bg-brand-earth/20 transition-colors"></div>
+                                                <div className="absolute top-0 right-0 w-24 h-24 md:w-32 md:h-32 bg-brand-earth/10 rounded-full -mr-12 -mt-12 md:-mr-16 md:-mt-16 blur-2xl group-hover:bg-brand-earth/20 transition-colors"></div>
                                             </>
                                         ) : (
                                             <>
-                                                <div className="text-4xl mb-4">{step.icon}</div>
-                                                <h3 className="font-display text-2xl uppercase text-brand-dark mb-2">{step.title}</h3>
-                                                <p className="font-sans text-sm text-brand-dark/60 mb-3">{step.desc}</p>
+                                                <div className="text-3xl md:text-4xl mb-3 md:mb-4">{step.icon}</div>
+                                                <h3 className="font-display text-lg md:text-2xl uppercase text-brand-dark mb-2 leading-tight">{step.title}</h3>
+                                                <p className="font-sans text-xs md:text-sm text-brand-dark/60 mb-3 leading-snug">{step.desc}</p>
                                                 {step.extra}
                                             </>
                                         )}
