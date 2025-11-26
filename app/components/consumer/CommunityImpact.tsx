@@ -207,22 +207,31 @@ export default function CommunityImpact() {
                         Why Local Food Systems Matter
                     </h3>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {benefits.map((benefit, i) => (
-                            <div key={i} className="flex gap-4 bg-warm-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow">
-                                <div className="w-12 h-12 bg-sage-green/10 rounded-xl flex items-center justify-center shrink-0 text-sage-green">
-                                    {benefit.icon}
+                    {/* Carousel Container */}
+                    <div className="relative group">
+                        <div
+                            id="benefits-carousel"
+                            className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory -mx-6 px-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 md:overflow-visible [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']"
+                        >
+                            {benefits.map((benefit, i) => (
+                                <div
+                                    key={i}
+                                    className="flex-shrink-0 w-64 h-64 md:w-auto md:h-auto snap-center bg-warm-white p-6 rounded-2xl shadow-sm hover:shadow-md transition-all border border-brand-dark/5 flex flex-col text-left"
+                                >
+                                    <div className="w-12 h-12 bg-sage-green/10 rounded-xl flex items-center justify-center shrink-0 text-sage-green mb-4">
+                                        {benefit.icon}
+                                    </div>
+                                    <div className="flex-grow flex flex-col">
+                                        <h4 className="font-sans font-bold text-lg text-dark-gray mb-2 min-h-[3.5rem] flex items-center">
+                                            {benefit.title}
+                                        </h4>
+                                        <p className="text-dark-gray/70 text-sm leading-relaxed">
+                                            {benefit.description}
+                                        </p>
+                                    </div>
                                 </div>
-                                <div>
-                                    <h4 className="font-sans font-bold text-dark-gray mb-2">
-                                        {benefit.title}
-                                    </h4>
-                                    <p className="text-dark-gray/70 text-sm">
-                                        {benefit.description}
-                                    </p>
-                                </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
