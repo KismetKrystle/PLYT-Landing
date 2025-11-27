@@ -52,7 +52,7 @@ export default function HeroModern() {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <p className="text-xl md:text-2xl font-serif leading-relaxed text-brand-dark mb-8">
-                            Curated local produce delivered. Space-optimized grow systems. Personalized growing guidance. Your intelligent network for food independence.
+                            Your intelligent network for food independence. Curated local produce delivered. Space-optimized grow systems. & Personalized growing guidance.
                         </p>
 
                         <div className="flex flex-col gap-4">
