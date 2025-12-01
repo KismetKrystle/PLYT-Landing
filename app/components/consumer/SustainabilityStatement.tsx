@@ -13,11 +13,11 @@ export default function SustainabilityStatement() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="font-display text-5xl md:text-7xl lg:text-8xl text-center uppercase leading-[0.9] text-brand-dark tracking-tight"
                 >
-                    Self-Sufficiency
+                    "Self-Sufficiency
                     <br />
                     <span className="text-brand-earth">Improves</span>
                     <br />
-                    Global Sustainability
+                    Global Sustainability"
                 </motion.h2>
             </div>
         </section>

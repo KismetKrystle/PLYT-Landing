@@ -106,7 +106,7 @@ export default function ProblemSolutionToggle() {
             <div className="container mx-auto px-6 relative z-10">
                 <div className="text-center mb-12">
                     <h2 className="font-display text-5xl md:text-6xl text-brand-dark mb-6 uppercase leading-[0.9]">
-                        From Crisis to <br />Resilience
+                        From Vulnerability to <br />Security
                     </h2>
 
                     {/* Toggle Switch */}
