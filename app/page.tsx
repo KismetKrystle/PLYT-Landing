@@ -15,6 +15,8 @@ import JoinModal from "./components/JoinModal";
 import BackToTop from "./components/BackToTop";
 import ConsumerFooter from "./components/consumer/Footer";
 
+import ParallaxSection from "./components/ParallaxSection";
+
 export default function Home() {
   return (
     <ModalProvider>
@@ -35,6 +37,12 @@ export default function Home() {
 
         <ProblemSolutionToggle />
 
+        <ParallaxSection
+          backgroundImage="/backgrounds/veggies-parallax.jpg"
+          height="40vh"
+          overlayOpacity={0.1}
+        />
+
         <HowItWorksModern />
 
         <SustainabilityStatement />
@@ -47,6 +55,12 @@ export default function Home() {
         <div className="w-full h-px bg-brand-dark/10"></div>
 
         <CommunityImpact />
+
+        <ParallaxSection
+          backgroundImage="/backgrounds/grow-systems-parallax.jpg"
+          height="40vh"
+          overlayOpacity={0.3}
+        />
 
         <TechnicalDeepDive />
 
