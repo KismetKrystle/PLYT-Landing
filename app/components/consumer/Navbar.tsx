@@ -19,7 +19,7 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-warm-white/95 backdrop-blur-lg shadow-lg" : "bg-transparent"
+            className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${scrolled ? "bg-warm-white/95 backdrop-blur-lg shadow-lg" : "bg-transparent"
                 } ${className}`}
         >
             <div className="container mx-auto px-6 py-4">
@@ -34,12 +34,15 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
                         <Link href="/about" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
                             About
                         </Link>
-                        <a href="#ai-chat" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <Link href="/gallery" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                            Gallery
+                        </Link>
+                        <Link href="/#ai-chat" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
                             Features
-                        </a>
-                        <a href="#how-it-works" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        </Link>
+                        <Link href="/#how-it-works" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
                             How It Works
-                        </a>
+                        </Link>
                         <button
                             onClick={() => openModal('waitlist')}
                             className="bg-sage-green text-white px-6 py-2 rounded-full font-sans font-semibold hover:bg-soft-teal hover:shadow-lg transition-all"
@@ -70,12 +73,15 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
                         <Link href="/about" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
                             About
                         </Link>
-                        <a href="#ai-chat" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <Link href="/gallery" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
+                            Gallery
+                        </Link>
+                        <Link href="/#ai-chat" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
                             Features
-                        </a>
-                        <a href="#how-it-works" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        </Link>
+                        <Link href="/#how-it-works" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
                             How It Works
-                        </a>
+                        </Link>
                         <button
                             onClick={() => {
                                 openModal('waitlist');
