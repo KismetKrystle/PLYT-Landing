@@ -41,7 +41,7 @@ export default function AboutPage() {
             ),
         },
         {
-            title: "Early 2018",
+            title: "2017-2019",
             content: (
                 <div>
                     <p className="text-neutral-950 text-xs md:text-sm font-medium mb-8">
@@ -76,9 +76,9 @@ export default function AboutPage() {
                 </div>
             ),
         },
-        /*
+
         {
-            title: "2021",
+            title: "2020-2025",
             content: (
                 <div>
                     <p className="text-neutral-950 text-xs md:text-sm font-medium mb-8">
@@ -89,7 +89,7 @@ export default function AboutPage() {
                 </div>
             ),
         },
-        */
+
     ];
 
     return (
