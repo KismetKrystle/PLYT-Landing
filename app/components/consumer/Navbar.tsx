@@ -67,32 +67,29 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
                     </button>
                 </div>
 
-                {/* Mobile Menu */}
-                {mobileMenuOpen && (
-                    <div className="md:hidden mt-4 pb-4 space-y-4">
-                        <Link href="/about" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
-                            About
-                        </Link>
-                        <Link href="/gallery" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
-                            Gallery
-                        </Link>
-                        <Link href="/#ai-chat" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
-                            Features
-                        </Link>
-                        <Link href="/#how-it-works" className="block text-dark-gray hover:text-sage-green transition-colors font-sans">
-                            How It Works
-                        </Link>
-                        <button
-                            onClick={() => {
-                                openModal('waitlist');
-                                setMobileMenuOpen(false);
-                            }}
-                            className="block w-full text-center bg-sage-green text-white px-6 py-2 rounded-full font-sans font-semibold hover:bg-soft-teal transition-colors"
-                        >
-                            Join Us
-                        </button>
-                    </div>
-                )}
+                <div className={`md:hidden absolute top-16 right-0 w-64 bg-white/60 backdrop-blur-sm p-6 flex flex-col items-end space-y-4 shadow-lg z-50 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+                    <Link href="/about" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
+                        About
+                    </Link>
+                    <Link href="/gallery" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
+                        Gallery
+                    </Link>
+                    <Link href="/#ai-chat" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
+                        Features
+                    </Link>
+                    <Link href="/#how-it-works" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
+                        How It Works
+                    </Link>
+                    <button
+                        onClick={() => {
+                            openModal('waitlist');
+                            setMobileMenuOpen(false);
+                        }}
+                        className="block w-full text-center bg-sage-green text-white px-6 py-2 rounded-full font-sans font-semibold hover:bg-soft-teal transition-colors"
+                    >
+                        Join Us
+                    </button>
+                </div>
             </div>
         </nav>
     );
