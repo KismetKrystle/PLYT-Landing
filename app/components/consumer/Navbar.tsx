@@ -31,8 +31,11 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center gap-8">
+                        <Link href="/" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                            Home
+                        </Link>
                         <Link href="/about" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
-                            About
+                            About Founder
                         </Link>
                         <Link href="/gallery" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
                             Gallery
@@ -68,8 +71,11 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
                 </div>
 
                 <div className={`md:hidden absolute top-16 right-0 w-64 bg-white/60 backdrop-blur-sm p-6 flex flex-col items-end space-y-4 shadow-lg z-50 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+                    <Link href="/" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
+                        Home
+                    </Link>
                     <Link href="/about" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
-                        About
+                        About Founder
                     </Link>
                     <Link href="/gallery" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
                         Gallery
