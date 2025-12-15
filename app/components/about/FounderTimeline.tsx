@@ -1,7 +1,5 @@
-"use client";
-
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, X, Play } from 'lucide-react';
 import Image from 'next/image';
 import { timelineData } from '@/app/about/data';
 
@@ -10,12 +8,15 @@ const FounderTimeline = () => {
     const [currentMediaIndex, setCurrentMediaIndex] = useState<{ [key: number]: number }>({});
     const [hoveredStage, setHoveredStage] = useState<{ [key: number]: boolean }>({});
     const [expandedStages, setExpandedStages] = useState<{ [key: number]: boolean }>({});
+
+    // Lightbox State
+    const [lightboxOpen, setLightboxOpen] = useState(false);
+    const [lightboxMedia, setLightboxMedia] = useState<any[]>([]);
+    const [lightboxIndex, setLightboxIndex] = useState(0);
+
     const stageRefs = useRef<(HTMLDivElement | null)[]>([]);
 
     // Map existing data to new stages
-    // Stage 3 (New) <- Stage 1 (Old: 2011-2015)
-    // Stage 4 (New) <- Stage 2 (Old: 2015-2019)
-    // Stage 5 (New) <- Stage 3 (Old: 2017-2019)
     const stage1Media = timelineData[0]?.media || [];
     const stage2Media = timelineData[1]?.media || [];
     const stage3Media = timelineData[2]?.media || [];
@@ -46,7 +47,7 @@ const FounderTimeline = () => {
             year: "2015-2019",
             title: "Design Meets Reality",
             content: "I moved and built a custom container box for my Tower Garden, something that looked like furniture, not lab equipment. I added T8 lights, retractable blinds to control light exposure, and made the system more mobile and accessible for maintenance. It worked beautifully, but the real lesson was sobering: I was willing to do the work for research, but most people wouldn't have the time or knowledge. True adoption would require on-call maintenance services and ready-to-transplant seedlings for faster results. I also discovered design flaws in existing systems, cleaning was difficult, refilling was awkward, and root diseases could spread between plants. The silver lining? Every visitor wanted one for their home, and I always sent friends away with fresh herbs and greens. The demand was real; the solution wasn't ready yet.",
-            coverImage: { color: 'from-brand-dark to-sage-green/40', label: 'Hover to explore gallery' },
+            coverImage: { color: 'from-brand-dark to-sage-green/40', label: 'Hover to explore gallery', src: "https://res.cloudinary.com/dsoojlgg1/image/upload/v1765786414/kismetwFirstGrowSystem_neqbqp.jpg" },
             media: stage2Media
         },
         {
@@ -88,7 +89,7 @@ const FounderTimeline = () => {
                         setActiveStage(index);
                     }
                 },
-                { threshold: 0.5 }
+                { rootMargin: '-20% 0px -60% 0px', threshold: 0 }
             );
             if (ref) observer.observe(ref);
             return observer;
@@ -120,6 +121,37 @@ const FounderTimeline = () => {
         }));
     };
 
+    // Lightbox Handlers
+    const openLightbox = (media: any[], index: number) => {
+        setLightboxMedia(media);
+        setLightboxIndex(index);
+        setLightboxOpen(true);
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeLightbox = () => {
+        setLightboxOpen(false);
+        document.body.style.overflow = 'unset';
+    };
+
+    const nextLightboxMedia = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setLightboxIndex(prev => (prev + 1) % lightboxMedia.length);
+    };
+
+    const prevLightboxMedia = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        setLightboxIndex(prev => prev === 0 ? lightboxMedia.length - 1 : prev - 1);
+    };
+
+    const scrollToStage = (index: number) => {
+        const el = stageRefs.current[index];
+        if (el) {
+            const y = el.getBoundingClientRect().top + window.scrollY - 120; // Offset for sticky headers
+            window.scrollTo({ top: y, behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className="min-h-screen bg-brand-dark text-brand-light font-sans relative overflow-hidden pt-24">
             {/* Background Ambient Glow */}
@@ -136,9 +168,44 @@ const FounderTimeline = () => {
                             <h1 className="text-6xl sm:text-7xl md:text-8xl font-display text-brand-light leading-[0.85] tracking-tighter uppercase break-words">
                                 From<br />Architecture<br />to Agriculture
                             </h1>
+
+                            {/* Header Images */}
+                            <div className="flex gap-4 sm:gap-6 mt-12">
+                                {/* Static Image */}
+                                <div className="relative w-1/2 aspect-[4/3] rounded-lg overflow-hidden border border-white/10 group">
+                                    <Image
+                                        src="https://res.cloudinary.com/dsoojlgg1/image/upload/v1765783633/Kismet_head_shot_wprdoh.jpg"
+                                        alt="Early experiments"
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                                        <span className="text-white text-sm font-medium">Early Experiments</span>
+                                    </div>
+                                </div>
+
+                                {/* Jump Link Image */}
+                                <div
+                                    className="relative w-1/2 aspect-[4/3] rounded-lg overflow-hidden border border-white/10 cursor-pointer group"
+                                    onClick={() => scrollToStage(3)}
+                                >
+                                    <Image
+                                        src="https://res.cloudinary.com/dsoojlgg1/image/upload/v1765786414/kismetwFirstGrowSystem_neqbqp.jpg"
+                                        alt="Jump to 2015-2019"
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                                    />
+                                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-300" />
+
+                                    {/* Button Overlay */}
+                                    <div className="absolute bottom-4 right-4 bg-sage-green text-brand-dark px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 flex items-center gap-1">
+                                        Jump to 2015 <ChevronRight className="w-3 h-3" />
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div className="w-full md:w-1/2 pt-1">
-                            <p className="text-brand-light/90 text-xl md:text-2xl leading-relaxed font-serif">
+                            <p className="text-brand-light/90 text-xl md:text-2xl leading-relaxed font-serif mb-8">
                                 Over the past decade, I've built expertise at the intersection of design and urban farming, not through theory alone, but by growing food in my living room, operating commercial vertical farms, and iterating through countless system designs. What started as architectural curiosity became a mission to make fresh, local food accessible to everyone. This timeline documents the hands-on research, hard-won lessons, and design evolution that led to Plyant. Each stage represents real experiments, actual crops grown, and insights that can only come from getting your hands dirty, both in planting and in code.
                             </p>
                         </div>
@@ -244,7 +311,25 @@ const FounderTimeline = () => {
                                                     {/* 1. Cover View (Default) */}
                                                     <div className={`absolute inset-0 transition-opacity duration-500 z-10 ${isHovered ? 'opacity-0 pointer-events-none' : 'opacity-100'
                                                         }`}>
-                                                        <div className={`w-full h-full bg-gradient-to-br ${stage.coverImage.color}`}>
+                                                        {/* Optional Cover Image */}
+                                                        {/* @ts-ignore */}
+                                                        {stage.coverImage.src && (
+                                                            <Image
+                                                                // @ts-ignore
+                                                                src={stage.coverImage.src}
+                                                                alt={stage.title}
+                                                                fill
+                                                                className="object-cover"
+                                                            />
+                                                        )}
+
+                                                        <div className={`absolute inset-0 ${
+                                                            // @ts-ignore
+                                                            stage.coverImage.src
+                                                                ? 'bg-black/60'
+                                                                : `bg-gradient-to-br ${stage.coverImage.color}`
+                                                            }`}
+                                                        >
                                                             <div className="absolute inset-0 flex items-center justify-center">
                                                                 <div className="text-center p-8">
                                                                     <svg className="w-16 h-16 mx-auto mb-4 text-brand-light/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -265,8 +350,10 @@ const FounderTimeline = () => {
                                                     </div>
 
                                                     {/* 2. Media View (Hover) */}
-                                                    <div className={`absolute inset-0 transition-opacity duration-500 ${isHovered ? 'opacity-100' : 'opacity-0'
-                                                        }`}>
+                                                    <div
+                                                        className={`absolute inset-0 transition-opacity duration-500 cursor-pointer ${isHovered ? 'opacity-100' : 'opacity-0'}`}
+                                                        onClick={() => openLightbox(stage.media, currentIndex)}
+                                                    >
                                                         {mediaSrc && mediaType === 'image' ? (
                                                             <Image
                                                                 src={mediaSrc}
@@ -302,26 +389,28 @@ const FounderTimeline = () => {
                                                         )}
 
                                                         {/* Media Label Overlay */}
-                                                        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
-
+                                                        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent flex justify-between items-end">
                                                             <p className="text-white/50 text-xs">
                                                                 {currentIndex + 1} / {stage.media.length}
                                                             </p>
+                                                            <div className="text-white/70 text-xs flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                                                                Click to expand
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                {/* Navigation arrows */}
+                                                {/* Navigation arrows (Propagation stopped so they don't open lightbox) */}
                                                 {stage.media.length > 1 && isHovered && (
                                                     <>
                                                         <button
-                                                            onClick={() => prevMedia(stageIndex)}
+                                                            onClick={(e) => { e.stopPropagation(); prevMedia(stageIndex); }}
                                                             className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-sage-green text-white rounded-full p-2 transition-all z-20 backdrop-blur-md"
                                                         >
                                                             <ChevronLeft className="w-5 h-5" />
                                                         </button>
                                                         <button
-                                                            onClick={() => nextMedia(stageIndex)}
+                                                            onClick={(e) => { e.stopPropagation(); nextMedia(stageIndex); }}
                                                             className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-sage-green text-white rounded-full p-2 transition-all z-20 backdrop-blur-md"
                                                         >
                                                             <ChevronRight className="w-5 h-5" />
@@ -337,9 +426,87 @@ const FounderTimeline = () => {
                     })}
                 </div>
             </div>
+
+            {/* Lightbox Overlay */}
+            {lightboxOpen && (
+                <div className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4">
+                    <button
+                        onClick={closeLightbox}
+                        className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors z-[110]"
+                    >
+                        <X className="w-8 h-8" />
+                    </button>
+
+                    <div className="relative w-full h-full max-w-7xl max-h-[90vh] flex items-center justify-center">
+                        {(() => {
+                            const media = lightboxMedia[lightboxIndex];
+                            if (!media) return null;
+
+                            return (
+                                <>
+                                    {media.type === 'image' ? (
+                                        <div className="relative w-full h-full">
+                                            <Image
+                                                src={media.src}
+                                                alt={media.alt}
+                                                fill
+                                                className="object-contain"
+                                                quality={90}
+                                            />
+                                        </div>
+                                    ) : (
+                                        <div className="relative w-full aspect-video max-h-full">
+                                            {media.src.includes('youtube') || media.src.includes('youtu.be') ? (
+                                                <iframe
+                                                    src={media.src.replace('youtu.be/', 'www.youtube.com/embed/').replace('watch?v=', 'embed/') + '?autoplay=1'}
+                                                    className="w-full h-full"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowFullScreen
+                                                />
+                                            ) : (
+                                                <video
+                                                    src={media.src}
+                                                    className="w-full h-full"
+                                                    controls
+                                                    autoPlay
+                                                />
+                                            )}
+                                        </div>
+                                    )}
+
+                                    {/* Caption */}
+                                    <div className="absolute bottom-4 left-0 right-0 text-center pointer-events-none">
+                                        <div className="inline-block bg-black/50 backdrop-blur-md px-4 py-2 rounded-full">
+
+                                            <p className="text-white/50 text-sm mt-1">{lightboxIndex + 1} / {lightboxMedia.length}</p>
+                                        </div>
+                                    </div>
+                                </>
+                            );
+                        })()}
+
+                        {/* Navigation */}
+                        {lightboxMedia.length > 1 && (
+                            <>
+                                <button
+                                    onClick={prevLightboxMedia}
+                                    className="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+                                >
+                                    <ChevronLeft className="w-8 h-8" />
+                                </button>
+                                <button
+                                    onClick={nextLightboxMedia}
+                                    className="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+                                >
+                                    <ChevronRight className="w-8 h-8" />
+                                </button>
+                            </>
+                        )}
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
-
 
 export default FounderTimeline;
