@@ -25,22 +25,25 @@ const FounderTimeline = () => {
         {
             year: "2010",
             title: "The Discovery",
-            content: "While studying architecture at UNLV, I encountered vertical farming for the first time—a skyscraper concept from Columbia University that promised to revolutionize urban food production. It reignited my belief in architecture's potential to solve real problems. But the more I studied, the more I saw the limitations: astronomical costs, massive energy demands, impractical scale. The idea was visionary, but inaccessible. I began asking: what if we thought smaller and smarter?",
+            content: "While studying architecture at UNLV, I encountered vertical farming for the first time, a skyscraper concept from Columbia University that promised to revolutionize urban food production. It reignited my belief in architecture's potential to solve real problems. But the more I studied, the more I saw the limitations: astronomical costs, massive energy demands, impractical scale. The idea was visionary, but inaccessible. I began asking: what if we thought smaller and smarter?",
             coverImage: { color: 'from-brand-dark to-brand-earth/20', label: 'Hover to explore gallery' },
             media: []
         },
         {
             year: "2011",
             title: "Rethinking Scale",
-            content: "My thesis became a challenge to the vertical farm model. Instead of one massive structure feeding an entire city, I proposed distributed grow rooms integrated into existing buildings—apartments, offices, community centers. A 150,000 sq ft urban farm for Las Vegas's Symphony Park proved the architectural potential, but the real revelation was what didn't exist: modular, accessible hydroponic systems that anyone could use. The gap between vision and reality became my roadmap forward.",
-            coverImage: { color: 'from-brand-dark to-sage-green/30', label: 'Hover to explore gallery' },
-            media: []
+            content: "My thesis became a challenge to the vertical farm model. Instead of one massive structure feeding an entire city, I proposed distributed grow rooms integrated into existing buildings, apartments, offices, and community centers. My 150,000 sq ft mixed-use urban farm near Las Vegas's Symphony Park concept proved the architectural potential, but the real revelation was what didn't exist: modular, accessible hydroponic systems that anyone could use and any architect could design into their buildings. The gap between vision and reality became my roadmap forward.",
+            coverImage: { color: 'from-brand-dark to-sage-green/30', label: 'Hover to explore gallery', src: "https://res.cloudinary.com/dsoojlgg1/image/upload/v1765799541/myThesisProject_qwphgd.png" },
+            media: [
+                { type: 'image', src: "https://res.cloudinary.com/dsoojlgg1/image/upload/v1765799541/myThesisProject_qwphgd.png", alt: "Thesis Project" },
+                { type: 'image', src: "https://res.cloudinary.com/dsoojlgg1/image/upload/v1765799633/Final_FlexFarm_zpcnkl.jpg", alt: "Final FlexFarm" }
+            ]
         },
         {
             year: "2012-2015",
             title: "Learning to Grow",
             content: "I couldn't design systems without understanding what plants actually need. I volunteered with a local master gardener, maintaining community farms and backyard gardens, and quickly saw why outdoor growing fails urban residents: weather damage, theft, labor demands, unpredictable yields. I brought a Tower Garden indoors and turned my living room into a testing lab, experimenting with hydroponics methods, lighting systems, and pollination techniques. I grew herbs, fruiting plants, even root vegetables from seed to harvest, documenting what works at residential scale. This wasn't just research, it was building the foundational knowledge to design systems people would actually use.",
-            coverImage: { color: 'from-brand-dark to-soft-teal/30', label: 'Hover to explore gallery' },
+            coverImage: { color: 'from-brand-dark to-soft-teal/30', label: 'Hover to explore gallery', src: "https://res.cloudinary.com/dsoojlgg1/image/upload/v1765652335/1stlivingroomsetup-2_kqgrlj.jpg" },
             media: stage1Media
         },
         {
@@ -54,7 +57,7 @@ const FounderTimeline = () => {
             year: "2017-2019",
             title: "Commercial Scale Reality",
             content: "I was offered the chance to operate an abandoned Freight Farm in downtown Las Vegas, a 40-foot shipping container with 256 vertical towers capable of growing 4,500 plants. As a solo operator, I managed 1,000+ plants across 33 varieties, supplying kale, basil, and peppers to two restaurants less than a mile away. The chefs raved about the quality, produce with superior flavor and shelf life that lasted days longer than conventional suppliers. I programmed the automated systems, optimized nutrient balancing for mixed crops, improved pest management, and developed production schedules to guarantee weekly harvests. When dialed in, the system required minimal oversight, just weekly check-ins via mobile app. But one weekend away exposed the fatal flaw: a burned pump left plants without water for 24 hours, and I lost half my crops. Unlike soil's forgiveness, hydroponic systems are critically dependent on electricity and functioning equipment. This vulnerability became my obsession. I had proven hyperlocal commercial farming worked, but the technology was too fragile and technical for widespread adoption. The design challenge became clear: create systems resilient enough for everyday users, regardless of technical skill or perfect conditions.",
-            coverImage: { color: 'from-brand-dark to-brand-earth/30', label: 'Hover to explore gallery' },
+            coverImage: { color: 'from-brand-dark to-brand-earth/30', label: 'Hover to explore gallery', src: "https://res.cloudinary.com/dsoojlgg1/image/upload/v1765658341/IMG_20170809_200156_825_gmp6w6.webp" },
             media: stage3Media
         },
         {
@@ -67,7 +70,7 @@ const FounderTimeline = () => {
         {
             year: "2023-Current",
             title: "Building the Ecosystem",
-            content: "The hardware solved one problem, but widespread adoption required infrastructure. During isolation, I discovered Web3 and taught myself to code, realizing blockchain could coordinate the missing pieces: service networks, seedling distribution, and maintenance support. Individual grow systems aren't enough, people need an ecosystem that eliminates barriers to fresh food. I began developing the business model this site introduces: distributed grow systems (including existing market products that can be integrated and optimized) supported by AI-powered tools that help users find food sources and grow successfully. Local artisans customize units, recycled materials reduce waste, and a service network ensures no one waits for fresh food. The vision is complete: sustainable, locally-powered systems backed by technology that makes urban farming accessible to everyone.",
+            content: "The hardware solved one problem, but widespread adoption required infrastructure. During isolation, I discovered Web3 and taught myself to code, realizing blockchain could coordinate the missing pieces: service networks, seedling distribution, and maintenance support. Individual grow systems aren't enough, people need an ecosystem that eliminates barriers to fresh food. I began developing the business model this site introduces: distributed grow systems (including existing market products that can be integrated and optimized) supported by AI-powered tools that help users find food sources and grow successfully. Local artisans customize units, recycled materials reduce waste, and a service network ensures no one waits for fresh food. The vision is clear: AI-powered local food networks, and sustainable, locally sourced systems backed by technology that makes urban farming accessible to everyone.",
             coverImage: { color: 'from-brand-dark to-sage-green/50', label: 'Hover to explore gallery' },
             media: []
         }
@@ -332,9 +335,7 @@ const FounderTimeline = () => {
                                                         >
                                                             <div className="absolute inset-0 flex items-center justify-center">
                                                                 <div className="text-center p-8">
-                                                                    <svg className="w-16 h-16 mx-auto mb-4 text-brand-light/30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                                                    </svg>
+                                                                    {/* Icon removed */}
                                                                     <p className="text-brand-light/90 text-lg font-medium mb-1 font-display">
                                                                         {stage.year}
                                                                     </p>
