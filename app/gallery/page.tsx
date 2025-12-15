@@ -34,6 +34,16 @@ const galleryImages = [
         alt: "Indoor Garden Lifestyle",
         title: "Living Space Integration",
     },
+    {
+        src: "/assets/images/gallery/Gemini_Generated_Image_1hhn251hhn251hhn.png",
+        alt: "Conceptual Hydroponic Setup",
+        title: "Future Concepts",
+    },
+    {
+        src: "/assets/images/gallery/gallery-3.jpg",
+        alt: "Alternative Spiral Garden View",
+        title: "Spiral Garden Variation",
+    },
 ];
 
 export default function GalleryPage() {
@@ -82,8 +92,8 @@ export default function GalleryPage() {
                             Grow System Gallery
                         </h1>
                         <p className="text-neutral-600 max-w-2xl mx-auto text-lg">
-                            Explore our innovative hydroponic designs and visualize how they
-                            can transform your living space.
+                            Explore the potentials of hydroponic designs and visualize how they
+                            can transform your space.
                         </p>
                     </div>
 
