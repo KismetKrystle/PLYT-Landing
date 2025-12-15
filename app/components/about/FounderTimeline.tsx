@@ -208,8 +208,11 @@ const FounderTimeline = () => {
                             </div>
                         </div>
                         <div className="w-full md:w-1/2 pt-1">
-                            <p className="text-brand-light/90 text-xl md:text-2xl leading-relaxed font-serif mb-8">
-                                Over the past decade, I've built expertise at the intersection of design and urban farming, not through theory alone, but by growing food in my living room, operating commercial vertical farms, and iterating through countless system designs. What started as architectural curiosity became a mission to make fresh, local food accessible to everyone. This timeline documents the hands-on research, hard-won lessons, and design evolution that led to Plyant. Each stage represents real experiments, actual crops grown, and insights that can only come from getting your hands dirty, both in planting and in code.
+                            <p className="text-brand-light/90 text-xl md:text-[1.35rem] leading-relaxed font-serif mb-6 tracking-tight">
+                                Over the past two decade, I've built expertise at the intersection of design and urban farming, not through theory alone, but by growing food in my living room, operating commercial vertical farms, and iterating through countless system designs. What started as architectural curiosity became a mission to make fresh, local food accessible to everyone.
+                            </p>
+                            <p className="text-brand-light/90 text-xl md:text-[1.35rem] leading-relaxed font-serif mb-8 tracking-tight">
+                                This timeline documents the hands-on research, hard-won lessons, and design evolution that led to Plyant. Each stage represents real experiments, actual crops grown, and insights that can only come from getting your hands dirty, both in planting and in code.
                             </p>
                         </div>
                     </div>
