@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { useModal } from "../../context/ModalContext";
 
-export default function ConsumerNavbar({ className = "" }: { className?: string }) {
+export default function ConsumerNavbar({ className = "", theme = "light" }: { className?: string, theme?: "light" | "dark" }) {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const { openModal } = useModal();
@@ -25,8 +26,17 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
             <div className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
                     {/* Logo */}
-                    <Link href="/" className="font-serif text-2xl font-bold text-sage-green hover:text-soft-teal transition-colors">
-                        PLYANT
+                    {/* Logo */}
+                    <Link href="/" className="relative z-50">
+                        <div className="relative w-40 h-12">
+                            <Image
+                                src={`/assets/images/logos/company-logo-${theme === 'dark' ? 'light' : 'dark'}.png`}
+                                alt="PLYANT"
+                                fill
+                                className="object-contain object-left"
+                                priority
+                            />
+                        </div>
                     </Link>
 
                     {/* Desktop Menu */}
@@ -41,7 +51,7 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
                             Gallery
                         </Link>
                         <Link href="/#ai-chat" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
-                            Features
+                            Meet Your AI
                         </Link>
                         <Link href="/#how-it-works" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
                             How It Works
@@ -81,7 +91,7 @@ export default function ConsumerNavbar({ className = "" }: { className?: string 
                         Gallery
                     </Link>
                     <Link href="/#ai-chat" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
-                        Features
+                        Meet Your AI
                     </Link>
                     <Link href="/#how-it-works" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
                         How It Works

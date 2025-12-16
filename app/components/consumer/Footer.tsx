@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ConsumerFooter() {
     return (
@@ -7,7 +8,14 @@ export default function ConsumerFooter() {
                 <div className="grid md:grid-cols-4 gap-12 mb-12">
                     {/* Brand */}
                     <div className="md:col-span-2">
-                        <h3 className="font-serif text-3xl text-sage-green mb-4">PLYANT</h3>
+                        <div className="relative w-48 h-12 mb-4">
+                            <Image
+                                src="/assets/images/logos/company-logo-light.png"
+                                alt="PLYANT"
+                                fill
+                                className="object-contain object-left"
+                            />
+                        </div>
                         <p className="text-warm-white/70 mb-6 max-w-md">
                             The Network of Urban Nature. Pioneering climate-resilient, financially inclusive food systems through community empowerment.
                         </p>

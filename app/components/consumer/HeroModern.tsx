@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function HeroModern() {
     return (
-        <section className="relative w-full min-h-screen bg-brand-light text-brand-black overflow-hidden pt-24 pb-6 px-4 md:px-8 flex flex-col">
+        <section className="relative w-full min-h-screen bg-brand-light text-brand-black overflow-hidden pt-36 pb-6 px-4 md:px-8 flex flex-col">
             {/* Massive Header */}
             <div className="w-full max-w-[1800px] mx-auto mb-8">
                 <motion.h1
@@ -52,7 +52,7 @@ export default function HeroModern() {
                         transition={{ duration: 0.8, delay: 0.4 }}
                     >
                         <p className="text-xl md:text-2xl font-serif leading-relaxed text-brand-dark mb-8">
-                            Your intelligent network for food independence. Curated local produce delivered. Space-optimized grow systems. & Personalized growing guidance.
+                            Your intelligent network for food independence. Curated local produce delivered. Space optimized grow systems. & Personalized growing guidance.
                         </p>
 
                         <div className="flex flex-col gap-4">

@@ -17,9 +17,12 @@ import ConsumerFooter from "./components/consumer/Footer";
 
 import ParallaxSection from "./components/ParallaxSection";
 
+import HashScroll from "./components/HashScroll";
+
 export default function Home() {
   return (
     <ModalProvider>
+      <HashScroll />
       <main className="min-h-screen bg-brand-light">
         {/* XRPL Residency Link - Fixed Banner */}
         <div className="fixed top-0 left-0 right-0 z-[70] h-10 bg-brand-dark text-brand-light flex items-center justify-center border-b border-brand-light/10">
