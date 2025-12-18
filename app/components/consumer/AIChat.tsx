@@ -15,45 +15,11 @@ export default function AIChat() {
             color: "soft-teal",
             content: (
                 <div className="bg-gradient-to-br from-soft-teal/20 to-sky-blue/20 rounded-none p-6 h-full border border-dark-gray/10 flex items-center justify-center">
-                    {/* Mobile View Mockup */}
-                    <div className="max-w-sm w-full h-[450px] bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20 flex flex-col">
-                        {/* Phone Header */}
-                        <div className="bg-sage-green px-6 py-4">
-                            <div className="flex items-center justify-between">
-                                <h4 className="text-white font-bold text-lg">Fresh Produce</h4>
-                                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                            </div>
-                        </div>
-
-                        {/* Produce List */}
-                        <div className="p-4 space-y-3 bg-warm-white h-full flex flex-col justify-center">
-                            {[
-                                { name: "Organic Tomatoes", distance: "0.8 km", price: "$2.50", vendor: "PadangFarm" },
-                                { name: "Fresh Spinach", distance: "1.2 km", price: "$1.80", vendor: "Ubud Gardens" },
-                                { name: "Local Carrots", distance: "1.5 km", price: "$2.00", vendor: "Bali Harvest" },
-                            ].map((item, i) => (
-                                <div key={i} className="bg-white rounded-xl p-4 shadow-sm border border-sage-green/20 hover:shadow-md transition-shadow">
-                                    <div className="flex justify-between items-start mb-2">
-                                        <div>
-                                            <h5 className="font-bold text-dark-gray">{item.name}</h5>
-                                            <p className="text-xs text-dark-gray/60">{item.vendor}</p>
-                                        </div>
-                                        <span className="font-bold text-sage-green">{item.price}</span>
-                                    </div>
-                                    <div className="flex items-center gap-2 text-xs text-dark-gray/60">
-                                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                                        </svg>
-                                        <span>{item.distance} away</span>
-                                        <span className="ml-auto text-green-600">● Available</span>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+                    <img
+                        src="/assets/images/consumer/ai-fresh-food.png"
+                        alt="Find Fresh Food Nearby"
+                        className="h-full w-auto object-contain rounded-3xl shadow-2xl border-8 border-dark-gray/20"
+                    />
                 </div>
             ),
         },
@@ -148,72 +114,11 @@ export default function AIChat() {
             color: "sage-green",
             content: (
                 <div className="bg-gradient-to-br from-sage-green/20 to-soft-teal/20 rounded-none p-6 h-full flex items-center justify-center border border-dark-gray/10">
-                    {/* Mobile View Mockup */}
-                    <div className="max-w-sm w-full h-[450px] bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20 flex flex-col">
-                        {/* Phone Header */}
-                        <div className="bg-sage-green px-6 py-4">
-                            <div className="flex items-center justify-between">
-                                <h4 className="text-white font-bold text-lg">Grow Systems</h4>
-                                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="bg-warm-white h-full p-4 flex flex-col justify-center">
-                            <div className="bg-white rounded-xl p-4 shadow-sm border border-sage-green/20">
-                                {/* System Image Placeholder */}
-                                <div className="aspect-square bg-gradient-to-br from-sage-green/30 to-soft-teal/30 rounded-2xl mb-4 flex items-center justify-center relative">
-                                    <div className="text-center">
-                                        <svg className="w-16 h-16 text-sage-green/40 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                                        </svg>
-                                        <p className="text-dark-gray/50 font-mono text-xs mt-2">Vertical Tower Garden</p>
-                                    </div>
-                                    <div className="absolute top-2 right-2 bg-sage-green text-white px-2 py-1 rounded-full text-xs font-bold">
-                                        Available
-                                    </div>
-                                </div>
-
-                                {/* System Details */}
-                                <h4 className="font-bold text-xl text-dark-gray mb-2">Urban Tower System</h4>
-                                <p className="text-dark-gray/60 text-xs mb-3">Perfect for balconies. Grows 20+ plants vertically.</p>
-
-                                <div className="bg-sage-green/10 rounded-xl p-3 mb-3">
-                                    <div className="flex justify-between items-center mb-2">
-                                        <span className="text-dark-gray/70 text-xs">Price</span>
-                                        <span className="text-xl font-bold text-sage-green">$280</span>
-                                    </div>
-                                    <div className="space-y-1 text-xs">
-                                        <div className="flex items-center gap-2 text-dark-gray/70">
-                                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                            </svg>
-                                            100% recycled materials
-                                        </div>
-                                        <div className="flex items-center gap-2 text-dark-gray/70">
-                                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                                            </svg>
-                                            Low water usage
-                                        </div>
-                                    </div>
-                                </div>
-
-                                {/* Artisans */}
-                                <div className="border-t border-sage-green/20 pt-3">
-                                    <p className="text-xs text-dark-gray/60 mb-2">Local artisans:</p>
-                                    <div className="flex gap-1 flex-wrap">
-                                        <div className="px-2 py-1 bg-sage-green/10 rounded-full text-xs text-dark-gray">
-                                            Pablo Luna
-                                        </div>
-                                        <div className="px-2 py-1 bg-sage-green/10 rounded-full text-xs text-dark-gray">
-                                            Bali Craft
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <img
+                        src="/assets/images/consumer/ai-grow-system.png"
+                        alt="Find Your Perfect Grow System"
+                        className="h-full w-auto object-contain rounded-3xl shadow-2xl border-8 border-dark-gray/20"
+                    />
                 </div>
             ),
         },
@@ -223,63 +128,11 @@ export default function AIChat() {
             color: "sky-blue",
             content: (
                 <div className="bg-gradient-to-br from-sky-blue/20 to-soft-teal/20 rounded-none p-6 h-full flex items-center justify-center border border-dark-gray/10">
-                    {/* Mobile View Mockup */}
-                    <div className="max-w-sm w-full h-[450px] bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20 flex flex-col">
-                        {/* Phone Header */}
-                        <div className="bg-sky-blue px-6 py-4">
-                            <div className="flex items-center justify-between">
-                                <h4 className="text-white font-bold text-lg">Impact Tracker</h4>
-                                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="bg-dark-gray/90 h-full p-4 relative flex flex-col justify-center">
-                            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-soft-teal to-transparent opacity-50"></div>
-
-                            <div className="flex justify-between items-center mb-6">
-                                <span className="font-mono text-warm-gold text-xs tracking-wider border border-warm-gold/30 px-2 py-1 rounded bg-warm-gold/10">DIGITAL TWIN</span>
-                                <span className="font-mono text-soft-teal text-xs">ID: #00042</span>
-                            </div>
-
-                            <h4 className="text-xl font-bold text-warm-white mb-6">Your Urban Tower System</h4>
-
-                            <div className="grid grid-cols-2 gap-4 mb-6">
-                                <div className="bg-black/40 p-4 rounded-lg border border-white/5">
-                                    <p className="text-gray-400 text-xs mb-1">CO₂ Offset</p>
-                                    <p className="font-mono text-soft-teal text-2xl font-bold">2.5kg</p>
-                                </div>
-                                <div className="bg-black/40 p-4 rounded-lg border border-white/5">
-                                    <p className="text-gray-400 text-xs mb-1">Water Saved</p>
-                                    <p className="font-mono text-soft-teal text-2xl font-bold">145L</p>
-                                </div>
-                                <div className="bg-black/40 p-4 rounded-lg border border-white/5">
-                                    <p className="text-gray-400 text-xs mb-1">Food Grown</p>
-                                    <p className="font-mono text-soft-teal text-2xl font-bold">8.2kg</p>
-                                </div>
-                                <div className="bg-black/40 p-4 rounded-lg border border-white/5">
-                                    <p className="text-gray-400 text-xs mb-1">Status</p>
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                                        <p className="font-mono text-green-400 text-sm">Active</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Mini Graph */}
-                            <div className="h-20 w-full bg-black/20 rounded border border-white/5 flex items-end px-2 pb-2 gap-1">
-                                {[40, 60, 45, 70, 55, 80, 65, 90, 75, 100].map((h, i) => (
-                                    <div
-                                        key={i}
-                                        className="flex-1 bg-soft-teal/30 hover:bg-soft-teal/50 transition-colors rounded-t-sm"
-                                        style={{ height: `${h}%` }}
-                                    ></div>
-                                ))}
-                            </div>
-
-                            <p className="text-gray-400 text-xs mt-4 text-center">Live productivity tracking</p>
-                        </div>
-                    </div>
+                    <img
+                        src="/assets/images/consumer/ai-impact.png"
+                        alt="Track Your Impact"
+                        className="h-full w-auto object-contain rounded-3xl shadow-2xl border-8 border-dark-gray/20"
+                    />
                 </div>
             ),
         },
