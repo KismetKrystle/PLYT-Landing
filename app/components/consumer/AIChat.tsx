@@ -29,82 +29,11 @@ export default function AIChat() {
             color: "warm-gold",
             content: (
                 <div className="bg-gradient-to-br from-warm-gold/20 to-coral/20 rounded-none p-6 h-full flex items-center justify-center border border-dark-gray/10">
-                    {/* Mobile View Mockup */}
-                    <div className="max-w-sm w-full h-[450px] bg-white rounded-3xl shadow-2xl overflow-hidden border-8 border-dark-gray/20 flex flex-col">
-                        {/* Phone Header */}
-                        <div className="bg-warm-gold px-6 py-4">
-                            <div className="flex items-center justify-between">
-                                <h4 className="text-white font-bold text-lg">Learn to Grow</h4>
-                                <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="bg-warm-white h-full p-4 flex items-center justify-center">
-                            <h4 className="text-center font-bold text-dark-gray mb-6">Growing Basil at Home</h4>
-
-                            {/* Simple Plant Visualization */}
-                            <div className="relative h-80 flex items-end justify-center">
-                                {/* Pot */}
-                                <div className="w-40 h-32 bg-gradient-to-b from-coral/40 to-coral/60 rounded-b-3xl relative">
-                                    <div className="absolute inset-x-4 top-0 h-3 bg-coral/30 rounded-t-lg"></div>
-                                </div>
-
-                                {/* Soil */}
-                                <div className="absolute bottom-24 w-36 h-8 bg-amber-900/40 rounded-full"></div>
-
-                                {/* Stem */}
-                                <div className="absolute bottom-32 w-2 h-24 bg-green-700 rounded-t-full"></div>
-
-                                {/* Leaves */}
-                                <div className="absolute bottom-48 left-1/2 -translate-x-1/2">
-                                    <div className="relative">
-                                        {[...Array(6)].map((_, i) => (
-                                            <div
-                                                key={i}
-                                                className="absolute w-8 h-12 bg-sage-green rounded-full"
-                                                style={{
-                                                    transform: `rotate(${i * 60}deg) translateY(-20px)`,
-                                                    transformOrigin: 'center'
-                                                }}
-                                            ></div>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Callouts */}
-                                <div className="absolute top-4 left-8 bg-warm-white border-2 border-sage-green rounded-lg px-3 py-1 shadow-lg">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-2 h-2 bg-sage-green rounded-full"></div>
-                                        <span className="text-xs font-bold text-dark-gray">Leaves: Harvest when 6-8 inches</span>
-                                    </div>
-                                </div>
-
-                                <div className="absolute bottom-40 right-4 bg-warm-white border-2 border-green-700 rounded-lg px-3 py-1 shadow-lg">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-2 h-2 bg-green-700 rounded-full"></div>
-                                        <span className="text-xs font-bold text-dark-gray">Stem: Supports growth</span>
-                                    </div>
-                                </div>
-
-                                <div className="absolute bottom-24 left-4 bg-warm-white border-2 border-amber-900 rounded-lg px-3 py-1 shadow-lg">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-2 h-2 bg-amber-900 rounded-full"></div>
-                                        <span className="text-xs font-bold text-dark-gray">Soil: Well-draining mix</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="mt-6 space-y-2">
-                                <p className="text-sm text-dark-gray/70 flex items-center gap-2">
-                                    <span className="text-lg">☀️</span> Needs 6-8 hours of sunlight daily
-                                </p>
-                                <p className="text-sm text-dark-gray/70 flex items-center gap-2">
-                                    <span className="text-lg">💧</span> Water when top soil feels dry
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <img
+                        src="/assets/images/consumer/ai-learn-to-grow.png"
+                        alt="Learn to Grow"
+                        className="h-full w-auto object-contain rounded-3xl shadow-2xl border-8 border-dark-gray/20"
+                    />
                 </div>
             ),
         },
