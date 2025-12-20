@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import ConsumerNavbar from "./components/consumer/Navbar";
 import HeroModern from "./components/consumer/HeroModern";
 import HowItWorksModern from "./components/consumer/HowItWorksModern";
@@ -22,7 +23,9 @@ import HashScroll from "./components/HashScroll";
 export default function Home() {
   return (
     <ModalProvider>
-      <HashScroll />
+      <Suspense fallback={null}>
+        <HashScroll />
+      </Suspense>
       <main className="min-h-screen bg-brand-light">
         {/* XRPL Residency Link - Fixed Banner */}
         <div className="fixed top-0 left-0 right-0 z-[70] h-10 bg-brand-dark text-brand-light flex items-center justify-center border-b border-brand-light/10">
