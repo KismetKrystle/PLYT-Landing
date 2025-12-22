@@ -48,7 +48,7 @@ export default function ConsumerNavbar({ className = "", theme = "light" }: { cl
                             About Founder
                         </Link>
                         <Link href="/gallery" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
-                            Gallery
+                            Grow Systems
                         </Link>
                         <Link href="/#ai-chat" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
                             Meet Your AI
@@ -88,7 +88,7 @@ export default function ConsumerNavbar({ className = "", theme = "light" }: { cl
                         About Founder
                     </Link>
                     <Link href="/gallery" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
-                        Gallery
+                        Grow Systems
                     </Link>
                     <Link href="/#ai-chat" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
                         Meet Your AI

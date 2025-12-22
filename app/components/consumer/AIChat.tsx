@@ -80,12 +80,14 @@ export default function AIChat() {
                         </p>
                     </div>
                     <div className="shrink-0">
-                        <button
-                            onClick={() => openModal('waitlist')}
+                        <a
+                            href="https://plyt-mvp.vercel.app/login"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="inline-block bg-brand-dark text-brand-light px-8 py-4 rounded-none font-sans font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-brand-dark"
                         >
-                            Try the AI Assistant
-                        </button>
+                            Explore the Interactive Prototype
+                        </a>
                     </div>
                 </div>
 
