@@ -36,6 +36,15 @@ const galleryImages = [
 
 const sections = [
     {
+        id: "custom",
+        category: "CUSTOM",
+        title: "Artisan Crafted",
+        description: "Elevate your grow system with handcrafted artisan shells designed to match your unique aesthetic. Choose from tabletop, wall, or floor systems, then collaborate with skilled artisans to create a one-of-a-kind piece that seamlessly integrates with your interior design.",
+        badge: "Bespoke Design",
+        features: ["Personalized consultation", "Artisan-crafted shells", "Match your living style"],
+        images: [galleryImages[3], galleryImages[4], galleryImages[17]]
+    },
+    {
         id: "tabletop",
         category: "TABLETOP",
         title: "Compact & Ready",
@@ -61,15 +70,6 @@ const sections = [
         badge: "Shop Online",
         features: ["Highest plant capacity", "Stable freestanding design", "Grow full-sized vegetables"],
         images: [galleryImages[12], galleryImages[13], galleryImages[14], galleryImages[15], galleryImages[16]]
-    },
-    {
-        id: "custom",
-        category: "CUSTOM",
-        title: "Artisan Crafted",
-        description: "Elevate your grow system with handcrafted artisan shells designed to match your unique aesthetic. Choose from tabletop, wall, or floor systems, then collaborate with skilled artisans to create a one-of-a-kind piece that seamlessly integrates with your interior design.",
-        badge: "Bespoke Design",
-        features: ["Personalized consultation", "Artisan-crafted shells", "Match your living style"],
-        images: [galleryImages[3], galleryImages[4], galleryImages[17]]
     }
 ];
 
@@ -202,7 +202,7 @@ export default function GalleryPage() {
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            className="text-4xl md:text-6xl font-bold text-neutral-950 mb-6 font-display tracking-tight"
+                            className="text-6xl md:text-8xl font-display text-neutral-950 mb-6 leading-[0.85] tracking-tighter uppercase"
                         >
                             Explore Your Future<br /><span className="text-emerald-700">Home Grow System</span>
                         </motion.h1>
@@ -264,8 +264,8 @@ export default function GalleryPage() {
 
                                 <div className="pt-2">
                                     <span className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold tracking-wide ${section.badge === "Bespoke Design"
-                                            ? "bg-purple-100 text-purple-700 border border-purple-200"
-                                            : "bg-neutral-100 text-neutral-700 border border-neutral-200"
+                                        ? "bg-purple-100 text-purple-700 border border-purple-200"
+                                        : "bg-neutral-100 text-neutral-700 border border-neutral-200"
                                         }`}>
                                         {section.badge}
                                     </span>
