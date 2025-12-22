@@ -42,7 +42,7 @@ const sections = [
         description: "Elevate your grow system with handcrafted artisan shells designed to match your unique aesthetic. Choose from tabletop, wall, or floor systems, then collaborate with skilled artisans to create a one-of-a-kind piece that seamlessly integrates with your interior design.",
         badge: "Bespoke Design",
         features: ["Personalized consultation", "Artisan-crafted shells", "Match your living style"],
-        images: [galleryImages[3], galleryImages[4], galleryImages[17]]
+        images: [galleryImages[3], galleryImages[4], galleryImages[17], galleryImages[0], galleryImages[1]]
     },
     {
         id: "tabletop",
@@ -198,7 +198,7 @@ export default function GalleryPage() {
 
                 {/* Hero Header */}
                 <div className="w-full bg-neutral-50 border-b border-neutral-100">
-                    <div className="max-w-7xl mx-auto px-4 md:px-8 py-20 md:py-28 text-center">
+                    <div className="max-w-7xl mx-auto px-4 md:px-8 py-20 md:py-28">
                         <motion.h1
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -210,7 +210,7 @@ export default function GalleryPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.1 }}
-                            className="text-neutral-600 max-w-2xl mx-auto text-lg md:text-xl leading-relaxed"
+                            className="text-neutral-600 max-w-2xl text-lg md:text-xl leading-relaxed"
                         >
                             From compact countertop gardens to bespoke artisan designs, find the ideal indoor growing solution for your space and lifestyle.
                         </motion.p>
