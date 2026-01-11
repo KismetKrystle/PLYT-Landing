@@ -14,11 +14,11 @@ export default function AIChat() {
             description: "Discover local vendors and farmers markets with fresh produce delivered straight from nearby farms",
             color: "soft-teal",
             content: (
-                <div className="bg-gradient-to-br from-soft-teal/20 to-sky-blue/20 rounded-none p-6 h-full border border-dark-gray/10 flex items-center justify-center">
+                <div className="rounded-none p-6 h-full flex items-center justify-center">
                     <img
                         src="/assets/images/consumer/ai-fresh-food.png"
                         alt="Find Fresh Food Nearby"
-                        className="h-full w-auto object-contain rounded-3xl shadow-2xl border-8 border-dark-gray/20"
+                        className="h-full w-auto object-contain"
                     />
                 </div>
             ),
@@ -28,11 +28,11 @@ export default function AIChat() {
             description: "Get personalized guidance on growing food in your space with step-by-step instructions",
             color: "warm-gold",
             content: (
-                <div className="bg-gradient-to-br from-warm-gold/20 to-coral/20 rounded-none p-6 h-full flex items-center justify-center border border-dark-gray/10">
+                <div className="rounded-none p-6 h-full flex items-center justify-center">
                     <img
                         src="/assets/images/consumer/ai-learn-to-grow.png"
                         alt="Learn to Grow"
-                        className="h-full w-auto object-contain rounded-3xl shadow-2xl border-8 border-dark-gray/20"
+                        className="h-full w-auto object-contain"
                     />
                 </div>
             ),
@@ -42,11 +42,11 @@ export default function AIChat() {
             description: "Browse custom systems designed by local artisans from recycled materials",
             color: "sage-green",
             content: (
-                <div className="bg-gradient-to-br from-sage-green/20 to-soft-teal/20 rounded-none p-6 h-full flex items-center justify-center border border-dark-gray/10">
+                <div className="rounded-none p-6 h-full flex items-center justify-center">
                     <img
                         src="/assets/images/consumer/ai-grow-system.png"
                         alt="Find Your Perfect Grow System"
-                        className="h-full w-auto object-contain rounded-3xl shadow-2xl border-8 border-dark-gray/20"
+                        className="h-full w-auto object-contain"
                     />
                 </div>
             ),
@@ -56,11 +56,11 @@ export default function AIChat() {
             description: "See real-time data on CO₂ saved, water conserved, and food produced from your growing system",
             color: "sky-blue",
             content: (
-                <div className="bg-gradient-to-br from-sky-blue/20 to-soft-teal/20 rounded-none p-6 h-full flex items-center justify-center border border-dark-gray/10">
+                <div className="rounded-none p-6 h-full flex items-center justify-center">
                     <img
                         src="/assets/images/consumer/ai-impact.png"
                         alt="Track Your Impact"
-                        className="h-full w-auto object-contain rounded-3xl shadow-2xl border-8 border-dark-gray/20"
+                        className="h-full w-auto object-contain"
                     />
                 </div>
             ),
