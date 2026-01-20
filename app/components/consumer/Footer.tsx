@@ -28,7 +28,7 @@ export default function ConsumerFooter() {
                         <ul className="space-y-2">
                             <li><a href="#how-it-works" className="text-warm-white/70 hover:text-sage-green transition-colors">How It Works</a></li>
                             <li><a href="#join" className="text-warm-white/70 hover:text-sage-green transition-colors">Join Waitlist</a></li>
-                            <li><a href="#technology" className="text-warm-white/70 hover:text-sage-green transition-colors">Technology</a></li>
+
                         </ul>
                     </div>
 
