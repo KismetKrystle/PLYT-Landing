@@ -46,7 +46,7 @@ export default function ConsumerFooter() {
                 {/* Copyright */}
                 <div className="pt-8 border-t border-warm-white/10 text-center">
                     <p className="text-warm-white/50 text-sm">
-                        © 2025 Plyant. All rights reserved.
+                        © 2026 Plyant. All rights reserved.
                     </p>
                 </div>
             </div>
