@@ -29,6 +29,7 @@ export default function JoinModal() {
         data["_subject"] = `New Plyant ${activeTab === "partnership" ? "Partnership Inquiry" : "Waitlist Request"}`;
         data["_template"] = "table";
         data["form_type"] = activeTab;
+        data["site_url"] = window.location.href; // Track if it's localhost or production
 
         try {
             const response = await fetch("https://formsubmit.co/ajax/krystle@plyant.com", {
