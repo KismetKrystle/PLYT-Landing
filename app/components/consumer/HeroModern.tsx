@@ -67,10 +67,10 @@ export default function HeroModern() {
                             </motion.a>
 
                             <a
-                                href="#technology"
+                                href="#how-it-works"
                                 className="w-full bg-transparent text-brand-dark py-4 px-6 text-lg font-bold uppercase tracking-wider flex items-center justify-between border border-brand-dark hover:bg-brand-dark hover:text-brand-light transition-colors"
                             >
-                                Learn More | XRPL Integration
+                                How it works
                                 <span className="text-xl">+</span>
                             </a>
                         </div>
