@@ -18,14 +18,15 @@ export default function ConsumerNavbar({ className = "", theme = "light" }: { cl
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const textColorClass = theme === "dark" ? "text-white" : "text-dark-gray";
+
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${scrolled ? "bg-warm-white/95 backdrop-blur-lg shadow-lg" : "bg-transparent"
+            className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${scrolled ? (theme === "dark" ? "bg-brand-dark/95 backdrop-blur-lg shadow-lg" : "bg-warm-white/95 backdrop-blur-lg shadow-lg") : "bg-transparent"
                 } ${className}`}
         >
             <div className="container mx-auto px-6 py-4">
                 <div className="flex items-center justify-between">
-                    {/* Logo */}
                     {/* Logo */}
                     <Link href="/" className="relative z-50">
                         <div className="relative w-40 h-12">
@@ -41,19 +42,19 @@ export default function ConsumerNavbar({ className = "", theme = "light" }: { cl
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex items-center gap-8">
-                        <Link href="/" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <Link href="/" className={`${textColorClass} hover:text-sage-green transition-colors font-sans`}>
                             Home
                         </Link>
-                        <Link href="/about" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <Link href="/about" className={`${textColorClass} hover:text-sage-green transition-colors font-sans`}>
                             About Founder
                         </Link>
-                        <Link href="/gallery" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <Link href="/gallery" className={`${textColorClass} hover:text-sage-green transition-colors font-sans`}>
                             Grow Systems
                         </Link>
-                        <Link href="/#ai-chat" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <Link href="/#ai-chat" className={`${textColorClass} hover:text-sage-green transition-colors font-sans`}>
                             Meet Your AI
                         </Link>
-                        <Link href="/#how-it-works" className="text-dark-gray hover:text-sage-green transition-colors font-sans">
+                        <Link href="/#how-it-works" className={`${textColorClass} hover:text-sage-green transition-colors font-sans`}>
                             How It Works
                         </Link>
                         <button
@@ -66,7 +67,7 @@ export default function ConsumerNavbar({ className = "", theme = "light" }: { cl
 
                     {/* Mobile Menu Button */}
                     <button
-                        className="md:hidden text-dark-gray"
+                        className={`md:hidden ${textColorClass}`}
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         aria-label="Toggle menu"
                     >
@@ -80,20 +81,20 @@ export default function ConsumerNavbar({ className = "", theme = "light" }: { cl
                     </button>
                 </div>
 
-                <div className={`md:hidden absolute top-16 right-0 w-64 bg-white/60 backdrop-blur-sm p-6 flex flex-col items-end space-y-4 shadow-lg z-50 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
-                    <Link href="/" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
+                <div className={`md:hidden absolute top-16 right-0 w-64 ${theme === 'dark' ? 'bg-brand-dark/90' : 'bg-white/60'} backdrop-blur-sm p-6 flex flex-col items-end space-y-4 shadow-lg z-50 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4 pointer-events-none'}`}>
+                    <Link href="/" className={`block ${textColorClass} hover:text-sage-green transition-colors font-sans text-right`}>
                         Home
                     </Link>
-                    <Link href="/about" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
+                    <Link href="/about" className={`block ${textColorClass} hover:text-sage-green transition-colors font-sans text-right`}>
                         About Founder
                     </Link>
-                    <Link href="/gallery" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
+                    <Link href="/gallery" className={`block ${textColorClass} hover:text-sage-green transition-colors font-sans text-right`}>
                         Grow Systems
                     </Link>
-                    <Link href="/#ai-chat" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
+                    <Link href="/#ai-chat" className={`block ${textColorClass} hover:text-sage-green transition-colors font-sans text-right`}>
                         Meet Your AI
                     </Link>
-                    <Link href="/#how-it-works" className="block text-dark-gray hover:text-sage-green transition-colors font-sans text-right">
+                    <Link href="/#how-it-works" className={`block ${textColorClass} hover:text-sage-green transition-colors font-sans text-right`}>
                         How It Works
                     </Link>
                     <button
