@@ -49,15 +49,7 @@ export default function ContactModern() {
                                     <p className="text-lg">krystle@plyant.com</p>
                                 </div>
                             </div>
-                            <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-brand-light/10 flex items-center justify-center text-brand-earth">
-                                    <MapPin className="w-6 h-6" />
-                                </div>
-                                <div>
-                                    <p className="text-sm text-brand-light/50 uppercase tracking-wider font-bold">Visit Us</p>
-                                    <p className="text-lg">Bali, Indonesia</p>
-                                </div>
-                            </div>
+
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-4">

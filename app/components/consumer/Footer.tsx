@@ -19,9 +19,7 @@ export default function ConsumerFooter() {
                         <p className="text-warm-white/70 mb-6 max-w-md">
                             The Network of Urban Nature. Pioneering climate-resilient, financially inclusive food systems through community empowerment.
                         </p>
-                        <p className="text-warm-white/50 text-sm">
-                            Based in Bali, Indonesia 🌴
-                        </p>
+
                     </div>
 
                     {/* Quick Links */}
