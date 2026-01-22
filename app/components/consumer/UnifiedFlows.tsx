@@ -27,9 +27,9 @@ export default function UnifiedFlows() {
             subtitle: "Your personal produce concierge.",
             steps: [
                 { icon: "🗣️", title: "1. Tell AI", desc: "Input produce, location, budget, time & preferences." },
-                { icon: "🔍", title: "2. Search", desc: "AI scans database for products in your area." },
-                { icon: "📦", title: "3. Optimize", desc: "Generates package options based on proximity & budget." },
-                { icon: "💳", title: "4. Pay", desc: "Select package and submit payment.", isDark: true },
+                { icon: "🔍", title: "2. Search", desc: "AI scans database for products in your area first." },
+                { icon: "📦", title: "3. Optimize", desc: "Generates search results based on proximity, health conditions & budget." },
+                { icon: "💳", title: "4. Pay", desc: "Explore selected options, choose the most fitting and submit payment.", isDark: true },
             ]
         },
         {
@@ -48,7 +48,7 @@ export default function UnifiedFlows() {
             title: "MONEY WORKS\nFOR YOU",
             subtitle: "Deposit funds, buy local, and watch your unused balance grow automatically.",
             steps: [
-                { icon: "💵", title: "1. Deposit", desc: "Add money to your Plyant wallet.", extra: <div className="font-mono text-lg font-bold text-brand-earth">$100 <span className="text-xs font-normal text-brand-dark/40">Initial</span></div> },
+                { icon: "💵", title: "1. Deposit", desc: "Add money to your wallet.", extra: <div className="font-mono text-lg font-bold text-brand-earth">$100 <span className="text-xs font-normal text-brand-dark/40">Initial</span></div> },
                 { icon: "🛒", title: "2. Buy Local", desc: "Support local growers & artisans.", extra: <div className="font-mono text-lg font-bold text-brand-earth">$60 <span className="text-xs font-normal text-brand-dark/40">Spent</span></div> },
                 { icon: "📈", title: "3. Earn Yield", desc: "Unused balance grows automatically.", extra: <div className="flex items-end gap-2"><div className="font-mono text-2xl font-bold text-brand-earth">+$2.80</div><div className="text-xs text-brand-light/50 mb-1">Annual Est.</div></div>, isDark: true },
             ]

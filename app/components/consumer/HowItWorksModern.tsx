@@ -13,15 +13,15 @@ const steps = [
         details: [
             {
                 title: "User Onboarding",
-                text: "Sign up via website/app (Web2 methods: email/social login). Custodial XRPL wallet auto-created for easy participation."
+                text: "Sign up via website/app"
             },
             {
                 title: "Marketplace Exploration",
-                text: "Browse products from home growers, local farmers, distributors, and artisans. Products: seedlings, fresh produce, prepared food, DIY plans, turnkey grow systems, and accessories. Sellers are clearly segmented by role for trust and choice."
+                text: "Browse seedlings, fresh produce, prepared food, DIY plans, turnkey grow systems, and accessories."
             },
             {
                 title: "Grow & Learn",
-                text: "AI Grow Companion provides personalized growing guidance. Connects users to local resources, suppliers, and service providers."
+                text: "AI Grow Companion provides personalized growing guidance based on preference and health conditions. Connects users to local resources, suppliers, and service providers."
             }
         ]
     },
@@ -33,31 +33,27 @@ const steps = [
         details: [
             {
                 title: "Sell & Trade",
-                text: "Users list produce, seedlings, or prepared food for sale on the marketplace. B2B clients (restaurants, stores) and community buyers can purchase directly."
+                text: "Users list produce, seedlings, grow products, prepared food, or natural bi-products for sale on the marketplace."
             },
             {
                 title: "Payments & Royalties",
-                text: "User can deposit their food budget weekly, monthly or yearly. Any unused balance automatically earns yield (powered by XRPL DEX), turning your food spending into a savings account. All transactions executed directly on XRPL blockchain using Plyant Credits. Smart contracts handle payments, automated royalties for designers/creators, and staking logic for passive earnings."
+                text: "User can deposit their food budget weekly, monthly or yearly. Any unused balance automatically earns yield, turning your food spending into a savings account."
             }
         ]
     },
     {
         id: 3,
         title: "Grow & Impact",
-        description: "Track your environmental impact, earn rewards for sustainable choices, and help build a resilient food system.",
+        description: "Track your environmental impact, health progress, earn rewards for sustainable choices, and help build a resilient food system.",
         icon: Sprout,
         details: [
             {
                 title: "Impact Dashboard",
-                text: "Community and individual impact tracked on-chain: fresh food yield, climate impact (CO2 reduction), circular economy credits. Live dashboard displays key metrics for all participants."
+                text: "Community and individual impact tracked: fresh food yield, climate impact (CO2 reduction), circular economy credits, and health progress. Live dashboard displays key metrics for all participants."
             },
             {
                 title: "Feedback & Expansion",
-                text: "Community feedback, sustainability leaderboards, and rapid onboarding for new participants. Modular structure supports easy replication and scaling to new regions."
-            },
-            {
-                title: "XRPL Integration",
-                text: "Payments, staking, royalties, and all impact metrics are handled transparently on-chain for auditability, speed, and low cost."
+                text: "Community feedback, sustainability leaderboards, and easy onboarding for new participants."
             }
         ]
     }

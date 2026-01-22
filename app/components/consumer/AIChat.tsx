@@ -11,7 +11,7 @@ export default function AIChat() {
     const cards = [
         {
             title: "Find Fresh Food Nearby",
-            description: "Discover local vendors and farmers markets with fresh produce delivered straight from nearby farms",
+            description: "Discover local vendors, food distributors (including food banks and farmer markets) and farmers",
             color: "soft-teal",
             content: (
                 <div className="rounded-none p-6 h-full flex items-center justify-center">
@@ -39,7 +39,7 @@ export default function AIChat() {
         },
         {
             title: "Find Your Perfect Grow System",
-            description: "Browse custom systems designed by local artisans from recycled materials",
+            description: "AI helps you browse for the most fitting grow systems available on global market or designed by local artisans from recycled materials",
             color: "sage-green",
             content: (
                 <div className="rounded-none p-6 h-full flex items-center justify-center">
@@ -76,18 +76,16 @@ export default function AIChat() {
                             Meet Your AI<br />Food Assistant
                         </h2>
                         <p className="text-brand-dark/70 text-xl font-serif max-w-2xl">
-                            One intelligent assistant to help you find food, learn to grow, and connect with your community
+                            One intelligent assistant to help you find food, learn to grow, eat what you need and connect with your community
                         </p>
                     </div>
                     <div className="shrink-0">
-                        <a
-                            href="https://plyt-mvp.vercel.app/login"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <button
+                            onClick={() => openModal('waitlist')}
                             className="inline-block bg-brand-dark text-brand-light px-8 py-4 rounded-none font-sans font-bold text-lg hover:shadow-xl hover:scale-105 transition-all duration-300 border border-brand-dark"
                         >
-                            Explore the Interactive Prototype
-                        </a>
+                            Explore the Beta App
+                        </button>
                     </div>
                 </div>
 
