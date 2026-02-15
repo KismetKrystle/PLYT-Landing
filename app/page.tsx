@@ -4,7 +4,6 @@ import HeroModern from "./components/consumer/HeroModern";
 import HowItWorksModern from "./components/consumer/HowItWorksModern";
 import SustainabilityStatement from "./components/consumer/SustainabilityStatement";
 import PartnersBanner from "./components/consumer/PartnersBanner";
-import SDGBanner from "./components/consumer/SDGBanner";
 import ProblemSolutionToggle from "./components/consumer/ProblemSolutionToggle";
 import AIChat from "./components/consumer/AIChat";
 import UnifiedFlows from "./components/consumer/UnifiedFlows";

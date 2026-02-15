@@ -36,6 +36,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable} ${oswald.variable} antialiased`}
+        suppressHydrationWarning={true}
       >
         {children}
       </body>
