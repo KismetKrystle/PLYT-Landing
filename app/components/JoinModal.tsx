@@ -25,11 +25,27 @@ export default function JoinModal() {
         const formData = new FormData(e.currentTarget);
         const data = Object.fromEntries(formData.entries());
 
-        // Add contextual info
+        // Check honeypot - if filled, it's a bot
+        if (data["_honey"]) {
+            console.log("Spam detected via honeypot");
+            setStatus("success"); // Show success to bot, but don't actually submit
+            return;
+        }
+
+        // Add contextual info and FormSubmit.co configuration
         data["_subject"] = `New Plyant ${activeTab === "partnership" ? "Partnership Inquiry" : "Waitlist Request"}`;
         data["_template"] = "table";
+        data["_captcha"] = "false"; // We're using honeypot instead
+        data["_autoresponse"] = `Thank you for your interest in Plyant! We've received your ${activeTab === "partnership" ? "partnership inquiry" : "waitlist request"} and will be in touch soon.`;
         data["form_type"] = activeTab;
         data["site_url"] = window.location.href; // Track if it's localhost or production
+        data["submission_time"] = new Date().toISOString();
+
+        console.log("Submitting form to FormSubmit.co:", {
+            form_type: activeTab,
+            domain: window.location.hostname,
+            url: window.location.href
+        });
 
         try {
             const response = await fetch("https://formsubmit.co/ajax/krystle@plyant.com", {
@@ -41,13 +57,21 @@ export default function JoinModal() {
                 body: JSON.stringify(data)
             });
 
+            const responseData = await response.json();
+            console.log("FormSubmit.co response:", { status: response.status, data: responseData });
+
             if (response.ok) {
                 setStatus("success");
             } else {
+                console.error("FormSubmit.co error response:", responseData);
                 setStatus("error");
             }
         } catch (error) {
             console.error("Form submission error:", error);
+            console.error("Error details:", {
+                message: error instanceof Error ? error.message : "Unknown error",
+                domain: window.location.hostname
+            });
             setStatus("error");
         }
     };
@@ -141,6 +165,15 @@ export default function JoinModal() {
                                             className="space-y-6"
                                             onSubmit={handleSubmit}
                                         >
+                                            {/* Honeypot field - hidden from users, catches bots */}
+                                            <input
+                                                type="text"
+                                                name="_honey"
+                                                style={{ display: "none" }}
+                                                tabIndex={-1}
+                                                autoComplete="off"
+                                            />
+
                                             <div>
                                                 <label className="block font-sans text-sm font-bold text-brand-dark mb-2 uppercase tracking-wide">
                                                     Name
@@ -193,8 +226,15 @@ export default function JoinModal() {
                                             </div>
 
                                             {status === "error" && (
-                                                <div className="p-3 bg-red-50 text-red-600 text-sm rounded-md">
-                                                    Something went wrong. Please try again or email us directly at krystle@plyant.com.
+                                                <div className="p-3 bg-red-50 text-red-600 text-sm rounded-md space-y-2">
+                                                    <p className="font-bold">Unable to submit form</p>
+                                                    <p>This could be due to:</p>
+                                                    <ul className="list-disc list-inside text-xs space-y-1">
+                                                        <li>Domain verification pending (check browser console for details)</li>
+                                                        <li>Network connectivity issue</li>
+                                                        <li>Server temporarily unavailable</li>
+                                                    </ul>
+                                                    <p className="mt-2">Please try again or email us directly at <a href="mailto:krystle@plyant.com" className="underline font-bold">krystle@plyant.com</a></p>
                                                 </div>
                                             )}
 
